@@ -4,8 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, YU的微博">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="shiro学习笔记, YU的微博">
+    <meta name="description" content="shiro架构
+
+subject：主体，可以是用户也可以是程序，主体要访问系统，系统需要对主体进行认证、授权。
+securityManager：安全管理器，主体进行认证和授权都 是通过securityManager进行。
+authentic">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hello World | YU的微博</title>
+    <title>shiro学习笔记 | YU的微博</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -303,13 +307,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hello World
+                        shiro学习笔记
                     </div>
                 </div>
             </div>
@@ -419,9 +423,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/shiro/">
+                                <span class="chip bg-color">shiro</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -433,7 +441,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-11-17
+                    2019-09-18
                 </div>
                 
 
@@ -442,14 +450,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    73
+                    1.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    7 分
                 </div>
                 
 				
@@ -465,19 +473,152 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+                <h2 id="shiro架构"><a href="#shiro架构" class="headerlink" title="shiro架构"></a>shiro架构</h2><p><img src="img/23.png" alt=""></p>
+<ol>
+<li><strong>subject：</strong>主体，可以是用户也可以是程序，主体要访问系统，系统需要对主体进行认证、授权。</li>
+<li><strong>securityManager：</strong>安全管理器，主体进行认证和授权都 是通过securityManager进行。</li>
+<li><strong>authenticator：</strong>认证器，主体进行认证最终通过authenticator进行的。</li>
+<li><strong>authorizer：</strong>授权器，主体进行授权最终通过authorizer进行的。</li>
+<li><strong>sessionManager：</strong>web应用中一般是用web容器对session进行管理，shiro也提供一套session管理的方式。</li>
+<li><strong>SessionDao：</strong>  通过SessionDao管理session数据，针对个性化的session数据存储需要使用sessionDao。</li>
+<li><strong>cache Manager：</strong>缓存管理器，主要对session和授权数据进行缓存，比如将授权数据通过cacheManager进行缓存管理，和ehcache整合对缓存数据进行管理。</li>
+<li><strong>realm：</strong>域，领域，相当于数据源，通过realm存取认证、授权相关数据。</li>
+</ol>
+<p><strong>注意：在realm中存储授权和认证的逻辑。</strong></p>
+<ol start="9">
+<li><strong>cryptography：</strong>密码管理，提供了一套加密/解密的组件，方便开发。比如提供常用的散列、加/解密等功能。比如 md5散列算法。</li>
+</ol>
+<h2 id="shiro认证流程"><a href="#shiro认证流程" class="headerlink" title="shiro认证流程"></a>shiro认证流程</h2><p><img src="img/shiro%E6%B5%81%E7%A8%8B.png" alt="shiro流程"></p>
+<p><strong>shiro授权流程</strong></p>
+<ol>
+<li><p>对subject进行授权，调用方法IsPermitted(“permission串”)</p>
+</li>
+<li><p>SecurityManager执行授权，通过ModularRealmAuthorizer执行授权</p>
+</li>
+<li><p>ModularRealmAuthorizer执行realm(自定义)从数据库查询权限数据 调用realm的授权方法:doGetAuthorizationInfo</p>
+</li>
+<li><p>Realm从数据库查询权限数据，返回ModularRealmAuthorizer</p>
+</li>
+<li><p>ModularRealmAuthorizer调用PermissionResolver进行权限串比对</p>
+</li>
+<li><p>如果比对后，isPermitted中“permission串”在realm查询到权限数据中，说明用户访问permission串有权限，否则没有权限，抛出异常。</p>
+<h2 id="shiro与项目整合"><a href="#shiro与项目整合" class="headerlink" title="shiro与项目整合"></a>shiro与项目整合</h2><h3 id="在web-xml中配置shiro的filter"><a href="#在web-xml中配置shiro的filter" class="headerlink" title="在web.xml中配置shiro的filter"></a>在web.xml中配置shiro的filter</h3><p>在web系统中，shiro也通过filter进行拦截，filter拦截成功后将操作权交给spring中配置的filterChain（过滤链）</p>
+<p><img src="img/webxml.png" alt="web.xml"></p>
+<h3 id="在spring中配置filter"><a href="#在spring中配置filter" class="headerlink" title="在spring中配置filter"></a>在spring中配置filter</h3><p>在applicationContext-shiro.xml 中配置web.xml中filter对应spring容器中的bean</p>
+</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"shiroFilter"</span> <span class="attr">class</span>=<span class="string">"org.apache.shiro.spring.web.ShiroFilterFactoryBean"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"securityManager"</span> <span class="attr">ref</span>=<span class="string">"securityManager"</span>/&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- loginUrl认证提交地址，如果没有认证将会请求此地址进行认证，请求此地址将由formAuthenticationFilter进行表单认证 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"loginUrl"</span> <span class="attr">value</span>=<span class="string">"/login.do"</span>/&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 认证成功后统一跳转到first.action,建议不配置,因shiro认证成功后会自动跳转到上一个请求路径--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"successUrl"</span> <span class="attr">value</span>=<span class="string">"/index.do"</span> /&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 指定无权限的访问页面 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"unauthorizedUrl"</span> <span class="attr">value</span>=<span class="string">"/refuse.jsp"</span>/&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 过虑器链定义，从上向下顺序执行，一般将/**放在最下边 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"filterChainDefinitions"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- 过滤器从上向下顺序执行 --&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- 对静态资源设置匿名访问 --&gt;</span></span><br><span class="line">            /images/** = anon</span><br><span class="line">            /js/** = anon</span><br><span class="line">            /css/** = anon</span><br><span class="line">            /favicon.ico = anon</span><br><span class="line">            <span class="comment">&lt;!--请求login.action地址,shiro清除session--&gt;</span></span><br><span class="line">            /logout.do = logout</span><br><span class="line">            <span class="comment">&lt;!--商品查询权限--&gt;</span></span><br><span class="line">            <span class="comment">&lt;!--/item/editItem.action = perms[item:update]--&gt;</span></span><br><span class="line">            <span class="comment">&lt;!--/item/edit.action = perms[item:add]--&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- 所用的url必须都认证通过后才可访问 --&gt;</span></span><br><span class="line">            /** = authc</span><br><span class="line">        <span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 7.2:安全管理器 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"securityManager"</span> <span class="attr">class</span>=<span class="string">"org.apache.shiro.web.mgt.DefaultWebSecurityManager"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"realm"</span> <span class="attr">ref</span>=<span class="string">"userRealm"</span>/&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--缓存器--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"cacheManager"</span> <span class="attr">ref</span>=<span class="string">"cacheManager"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 注入session管理器 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"sessionManager"</span> <span class="attr">ref</span>=<span class="string">"sessionManager"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 7.3:自定义 realm --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"userRealm"</span> <span class="attr">class</span>=<span class="string">"com.chxf.user.realm.MyRealm"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 将凭证匹配器设置到realm中 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"credentialsMatcher"</span> <span class="attr">ref</span>=<span class="string">"credentialsMatcher"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><p><strong>1. 原理</strong></p>
+<p>使用FormAuthenticationFilter过滤器实现，原理如下：</p>
+<p>将用户没有认证时，请求loginURL进行认证，用户身份和用户密码提交数据到loginURL</p>
+<p>FormAuthenticationFilter拦截住取出request中的username和password（两个参数名称是可以配置的）</p>
+<p>FormAuthenticationFilter调用realm传入一个token（username和password）</p>
+<p>Shiro中过滤器</p>
+<p>Realm认证时根据username查询用户信息（在Activeuser中存储，包括userid，usercode，username，menus）</p>
+<p>如果查询不到，realm返回null，FormAuthenticationFilter向request域中填充一个参数（记录了异常信息）</p>
+<p>*<em>2. 实现 *</em></p>
+<p>(登录提交地址，和applicationContext**-shiro.xml中配置的loginURL一致）</p>
+<p><img src="img/controller-login.png" alt=""></p>
+<p><strong>3. 认证拦截过滤器</strong></p>
+<p>在applicationContext-shiro.xml中配置</p>
+<p><img src="img/shiroxml.png" alt=""></p>
+<h3 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h3><p><strong>使用logoutFilter</strong></p>
+<p>不用我们去实现退出，只要去访问一个退出的URL（该URL是可以不存在），有logoutFilter拦截住，清除session 在applicationContext-shiro.xml中配置</p>
+<p><strong>logout.action = logout</strong></p>
+<h3 id="认证信息在页面显示"><a href="#认证信息在页面显示" class="headerlink" title="认证信息在页面显示"></a>认证信息在页面显示</h3><ol>
+<li>认证后用户菜单在首页显示</li>
+<li>认证后用户信息在页头显示</li>
+</ol>
+<h3 id="修改realm设置完整认证信息"><a href="#修改realm设置完整认证信息" class="headerlink" title="修改realm设置完整认证信息"></a>修改realm设置完整认证信息</h3><p>​    Realm从数据库查询用户信息，将用户菜单，usercode，username等 设置在SimpleAuthenticationInfo中 此处使用静态数据模拟实现</p>
+<p><img src="img/realm.png" alt=""></p>
+<p>//从shiro的session中取出activeUser</p>
+<p>Subject subject = SecurityUtils.getSubject();</p>
+<p>//取出身份信息</p>
+<p>ActiveUser activeUser = (ActiveUser) subject.getPrincipal();</p>
+<p>//通过model传到页面</p>
+<p>Model.addAtribute(“activeUser”,activeUser);</p>
+<h3 id="授权过滤器测试"><a href="#授权过滤器测试" class="headerlink" title="授权过滤器测试"></a>授权过滤器测试</h3><p><strong>使用permissionsAuthorizationFilter</strong></p>
+<p>在applicationContext-shiro.xml中配置</p>
+<p><img src="img/permision.png" alt=""></p>
+<p><strong>测试流程:</strong></p>
+<ol>
+<li>在applicationContext-shiro.xml中配置filter规则</li>
+</ol>
+<p><img src="img/1.png" alt=""></p>
+<ol start="2">
+<li>用户在认证通过后，请求/item/editItem.action</li>
+<li>被permissionsAuthorizationFilter拦截，发现需要“item:edit”权限</li>
+<li>permissionsAuthorizationFilter调用realm中的doGetAuthorizationInfo获取数据库中正确的权限</li>
+<li>permissionsAuthorizationFilter对item:edit和从realm中获取权限进行对比，如果“item：edit”在realm返回的权限列表中，授权通过</li>
+</ol>
+<h3 id="问题总结"><a href="#问题总结" class="headerlink" title="问题总结"></a>问题总结</h3><ol>
+<li><p><strong>在applicationContext-shiro.xml中配置过滤器连接，需要将全部的url和权限对应起来进行配置，比较麻烦不方便使用</strong></p>
+<p>（1）可通过注解方式授权</p>
+</li>
+</ol>
+<p><img src="img/2.png" alt=""></p>
+<p>​        （2）在springmvc.xml中配置shiro注解支持，可在controller层中使用shiro注解配置权限</p>
+<p><img src="img/3.png" alt=""></p>
+<p>​        （3）通过jsp标签方式授权</p>
+<p><img src="img/4.png" alt=""></p>
+<p>​        （4）授权测试</p>
+<p><img src="img/5.png" alt=""></p>
+<ol start="2">
+<li><strong>每次授权都要通过realm查询数据库，对于系统性能有很大影响，可通过shiro缓存解决</strong></li>
+</ol>
+<p>​       Shiro中提供了对认证信息和授权信息的缓存，shiro默认是关闭认证信息缓存的，对于授权信息的缓存shiro默认开启的。主要研究授权信息缓存，因为授权的数据量大。</p>
+<p>  （1）<strong>Shiro缓存流程</strong></p>
+<p>当用户认证通过</p>
+<p>该用户第一次授权：调用realm查询数据库</p>
+<p>该用户第二次授权：不调用realm查询数据库，直接从缓存中取出授权信息（权限标识符）</p>
+<p>  （2） <strong>使用ehcache</strong></p>
+<pre><code>1. 配置cacheManager</code></pre><p><img src="img/6.png" alt=""></p>
+<p><img src="img/7.png" alt=""></p>
+<ol start="2">
+<li>配置cacheManager</li>
+</ol>
+<p><img src="img/8.png" alt=""></p>
+<ol start="3">
+<li><p>缓存清空</p>
+<p>如果用户正常退出，缓存自动清空</p>
+<p>如果用户非正常退出，缓存自动清空</p>
+<p>如果修改了用户的权限，而用户不退出系统，修改的权限无法立即生效。</p>
+<p>需要手动进行编程实现：</p>
+<p>​    在权限修改后调用realm的clearCache方法清空缓存。</p>
+<p>下边的代码正常开发时要放在service中调用</p>
+<p>在service中，权限修改后调用下面的方法。</p>
+<p>在realm中定义clearCache方法</p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//清除缓存</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">clearCached</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    PrincipalCollection principals = SecurityUtils.getSubject().getPrincipals();</span><br><span class="line">    <span class="keyword">super</span>.clearCache(principals);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h3 id="sessionManager"><a href="#sessionManager" class="headerlink" title="sessionManager"></a>sessionManager</h3><p>和shiro整合后，使用shiro的session管理，shiro提供sessionDao操作会话数据</p>
+<p><strong>配置sessionManager</strong></p>
+<p><img src="img/9.png" alt=""></p>
+<p><img src="img/10.png" alt=""></p>
+<h3 id="验证码"><a href="#验证码" class="headerlink" title="验证码"></a>验证码</h3><p><strong>思路</strong></p>
+<p>Shiro使用FormAuthenticationFilter进行表单认证，验证校验的功能应该加在FormAuthenticationFilter中，在认证之前进行验证码校验</p>
+<p> 需要一个FormAuthenticationFilter的子类，继承FormAuthenticationFilter，改写它的认证方法，在认证之前进行验证码校验</p>
+<p><strong>自定义FormAuthenticationFilter</strong></p>
+<p><img src="img/11.png" alt=""></p>
+<p><strong>配置FormAuthenticationFilter</strong></p>
+<p><img src="img/12.png" alt=""></p>
+<p><img src="img/13.png" alt=""></p>
+<p><img src="img/14.png" alt=""></p>
+<h3 id="设置记住我功能（使用userFilter）"><a href="#设置记住我功能（使用userFilter）" class="headerlink" title="设置记住我功能（使用userFilter）"></a>设置记住我功能（使用userFilter）</h3><p><strong>如果设置记住我，则下次访问某些url时不用登陆，将记住我即可访问的地址配置让UserFilter拦截</strong></p>
+<p><img src="img/15.png" alt=""></p>
+<p><img src="img/16.png" alt=""></p>
+<p><strong>用户身份实现java.io.Serializable接口（用于存入cookie）</strong></p>
+<p><img src="img/17.png" alt=""></p>
+<p><strong>配置rememberManager</strong></p>
+<p><img src="img/18.png" alt=""></p>
+<p><img src="img/19.png" alt=""></p>
+<p><strong>添加rememberme界面</strong></p>
+<p><img src="img/20.png" alt=""></p>
+<p><strong>配置rememberMe的input名称</strong></p>
+<p><img src="img/21.png" alt=""></p>
+<p><img src="img/22.png" alt=""></p>
 
             </div>
             <hr/>
@@ -503,7 +644,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zhanghongyu1997.github.io/2019/11/17/hello-world/">https://zhanghongyu1997.github.io/2019/11/17/hello-world/</a>
+                    <a href="https://zhanghongyu1997.github.io/2019/09/18/shiro%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">https://zhanghongyu1997.github.io/2019/09/18/shiro%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -540,7 +681,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/shiro/">
+                                    <span class="chip bg-color">shiro</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -708,23 +853,19 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/11/17/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">
+                <a href="/2019/11/17/hello-world/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="我的第一篇博客">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
                         
-                        <span class="card-title">我的第一篇博客</span>
+                        <span class="card-title">Hello World</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            第一章内容
-第二章第三章
-
-
-
+                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
                         
                     </div>
                     <div class="publish-info">
@@ -740,14 +881,6 @@
                     </div>
                 </div>
                 
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
-                    </a>
-                    
-                </div>
-                
             </div>
         </div>
         
@@ -757,28 +890,25 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/09/18/shiro%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                <a href="/2019/06/18/first-blog/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="shiro学习笔记">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="first blog">
                         
-                        <span class="card-title">shiro学习笔记</span>
+                        <span class="card-title">first blog</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            shiro架构
+                            
 
-subject：主体，可以是用户也可以是程序，主体要访问系统，系统需要对主体进行认证、授权。
-securityManager：安全管理器，主体进行认证和授权都 是通过securityManager进行。
-authentic
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-09-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-06-18
                             </span>
                         <span class="publish-author">
                             
@@ -791,8 +921,8 @@ authentic
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/shiro/">
-                        <span class="chip bg-color">shiro</span>
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
                     </a>
                     
                 </div>
