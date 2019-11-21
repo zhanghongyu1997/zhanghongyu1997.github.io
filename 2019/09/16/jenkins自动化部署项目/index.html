@@ -27,7 +27,7 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 <body>
@@ -97,7 +97,7 @@
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
-      <span>关于</span>
+      <span>关于我</span>
     </a>
     
   </li>
@@ -119,7 +119,7 @@
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
-      <span>友情链接</span>
+      <span>这有大佬</span>
     </a>
     
   </li>
@@ -258,99 +258,10 @@
 
 
 
-<main class="post-container content">
+<main class="container content">
 
     
-    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
-<style>
-    #articleContent h1::before,
-    #articleContent h2::before,
-    #articleContent h3::before,
-    #articleContent h4::before,
-    #articleContent h5::before,
-    #articleContent h6::before {
-        display: block;
-        content: " ";
-        height: 100px;
-        margin-top: -100px;
-        visibility: hidden;
-    }
-
-    #articleContent :focus {
-        outline: none;
-    }
-
-    .toc-fixed {
-        position: fixed;
-        top: 64px;
-    }
-
-    .toc-widget {
-        padding-left: 20px;
-    }
-
-    .toc-widget .toc-title {
-        margin: 35px 0 15px 0;
-        padding-left: 17px;
-        font-size: 1.5rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
-
-    .toc-widget ol {
-        padding: 0;
-        list-style: none;
-    }
-
-    #toc-content ol {
-        padding-left: 10px;
-    }
-
-    #toc-content ol li {
-        padding-left: 10px;
-    }
-
-    #toc-content .toc-link:hover {
-        color: #42b983;
-        font-weight: 700;
-        text-decoration: underline;
-    }
-
-    #toc-content .toc-link::before {
-        background-color: transparent;
-        max-height: 25px;
-    }
-
-    #toc-content .is-active-link {
-        color: #42b983;
-    }
-
-    #toc-content .is-active-link::before {
-        background-color: #42b983;
-    }
-
-    #floating-toc-btn {
-        position: fixed;
-        right: 15px;
-        bottom: 76px;
-        padding-top: 15px;
-        margin-bottom: 0;
-        z-index: 998;
-    }
-
-    #floating-toc-btn .btn-floating {
-        width: 48px;
-        height: 48px;
-    }
-
-    #floating-toc-btn .btn-floating i {
-        line-height: 48px;
-        font-size: 1.4rem;
-    }
-</style>
-<div class="row">
-    <div id="main-content" class="col s12 m12 l9">
-        <!-- 文章内容详情 -->
+    <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -368,6 +279,15 @@
                 </div>
                 <div class="col s5 right-align">
                     
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Java/" class="post-category">
+                                Java
+                            </a>
+                        
+                    </div>
+                    
                 </div>
             </div>
 
@@ -384,14 +304,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.2k
+                    2.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    10 分
+                    12 分
                 </div>
                 
 				
@@ -439,33 +359,33 @@
 </li>
 <li><p>分别修改两个tomcat的端口号防止端口占用，即修改tomcat中conf下server.xml文件如下</p>
 <p><strong>tomcat8_jenkins</strong></p>
-<pre class=" language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!--第一处改动--></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Server</span> <span class="token attr-name">port</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>8079<span class="token punctuation">"</span></span> <span class="token attr-name">shutdown</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>SHUTDOWN<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-<span class="token comment" spellcheck="true">&lt;!--第二处改动--></span>    
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Connector</span> <span class="token attr-name">port</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>9100<span class="token punctuation">"</span></span> <span class="token attr-name">protocol</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>HTTP/1.1<span class="token punctuation">"</span></span>
-           <span class="token attr-name">connectionTimeout</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>20000<span class="token punctuation">"</span></span>
-           <span class="token attr-name">redirectPort</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>8443<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-<span class="token comment" spellcheck="true">&lt;!--第三处改动--></span>    
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Connector</span> <span class="token attr-name">port</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>8009<span class="token punctuation">"</span></span> <span class="token attr-name">protocol</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>AJP/1.3<span class="token punctuation">"</span></span> <span class="token attr-name">redirectPort</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>8443<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></code></pre>
+<pre><code class="xml">&lt;!--第一处改动--&gt;
+&lt;Server port=&quot;8079&quot; shutdown=&quot;SHUTDOWN&quot;&gt;
+&lt;!--第二处改动--&gt;    
+&lt;Connector port=&quot;9100&quot; protocol=&quot;HTTP/1.1&quot;
+           connectionTimeout=&quot;20000&quot;
+           redirectPort=&quot;8443&quot; /&gt;
+&lt;!--第三处改动--&gt;    
+&lt;Connector port=&quot;8009&quot; protocol=&quot;AJP/1.3&quot; redirectPort=&quot;8443&quot; /&gt;</code></pre>
 <p><strong>tomcat8_test</strong></p>
-<pre class=" language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!--第一处改动--></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Server</span> <span class="token attr-name">port</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>9006<span class="token punctuation">"</span></span> <span class="token attr-name">shutdown</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>SHUTDOWN<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-<span class="token comment" spellcheck="true">&lt;!--第二处改动--></span>    
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Connector</span> <span class="token attr-name">port</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>9797<span class="token punctuation">"</span></span> <span class="token attr-name">protocol</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>HTTP/1.1<span class="token punctuation">"</span></span>
-           <span class="token attr-name">connectionTimeout</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>20000<span class="token punctuation">"</span></span>
-           <span class="token attr-name">redirectPort</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>8443<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-<span class="token comment" spellcheck="true">&lt;!--第三处改动--></span>    
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Connector</span> <span class="token attr-name">port</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>9010<span class="token punctuation">"</span></span> <span class="token attr-name">protocol</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>AJP/1.3<span class="token punctuation">"</span></span> <span class="token attr-name">redirectPort</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>8443<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></code></pre>
+<pre><code class="xml">&lt;!--第一处改动--&gt;
+&lt;Server port=&quot;9006&quot; shutdown=&quot;SHUTDOWN&quot;&gt;
+&lt;!--第二处改动--&gt;    
+&lt;Connector port=&quot;9797&quot; protocol=&quot;HTTP/1.1&quot;
+           connectionTimeout=&quot;20000&quot;
+           redirectPort=&quot;8443&quot; /&gt;
+&lt;!--第三处改动--&gt;    
+&lt;Connector port=&quot;9010&quot; protocol=&quot;AJP/1.3&quot; redirectPort=&quot;8443&quot; /&gt;</code></pre>
 <p>3.修改tomcat8_jenkins中conf文件夹下的tomcat-users.xml文件，如下</p>
-<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>role</span> <span class="token attr-name">rolename</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tomcat<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>role</span> <span class="token attr-name">rolename</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>role1<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>role</span> <span class="token attr-name">rolename</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>manager-gui<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>role</span> <span class="token attr-name">rolename</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>manager-script<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>role</span> <span class="token attr-name">rolename</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>manager-status<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>user</span> <span class="token attr-name">username</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tomcat<span class="token punctuation">"</span></span> <span class="token attr-name">password</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tomcat<span class="token punctuation">"</span></span> <span class="token attr-name">roles</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tomcat<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>user</span> <span class="token attr-name">username</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>both<span class="token punctuation">"</span></span> <span class="token attr-name">password</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tomcat<span class="token punctuation">"</span></span> <span class="token attr-name">roles</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tomcat,role1<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>user</span> <span class="token attr-name">username</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>role1<span class="token punctuation">"</span></span> <span class="token attr-name">password</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tomcat<span class="token punctuation">"</span></span> <span class="token attr-name">roles</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>role1<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>user</span> <span class="token attr-name">username</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>deploy<span class="token punctuation">"</span></span> <span class="token attr-name">password</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tomcat<span class="token punctuation">"</span></span> <span class="token attr-name">roles</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>manager-gui,manager-script,manager-status<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></code></pre>
+<pre><code class="xml">&lt;role rolename=&quot;tomcat&quot;/&gt;
+&lt;role rolename=&quot;role1&quot;/&gt;
+&lt;role rolename=&quot;manager-gui&quot; /&gt;
+&lt;role rolename=&quot;manager-script&quot; /&gt;
+&lt;role rolename=&quot;manager-status&quot; /&gt;
+&lt;user username=&quot;tomcat&quot; password=&quot;tomcat&quot; roles=&quot;tomcat&quot;/&gt;
+&lt;user username=&quot;both&quot; password=&quot;tomcat&quot; roles=&quot;tomcat,role1&quot;/&gt;
+&lt;user username=&quot;role1&quot; password=&quot;tomcat&quot; roles=&quot;role1&quot;/&gt;
+&lt;user username=&quot;deploy&quot; password=&quot;tomcat&quot; roles=&quot;manager-gui,manager-script,manager-status&quot; /&gt;</code></pre>
 </li>
 </ol>
 <h2 id="安装jenkins"><a href="#安装jenkins" class="headerlink" title="安装jenkins"></a>安装jenkins</h2><p>下载jenkins.war并放在/data/jenkins/tomcat/tomcat8_jenkins/webapps中，在tomcat8_jenkins中bin目录中运行./startup.sh启动tomcat8_jenkins。</p>
@@ -487,96 +407,96 @@
 <p><img src="img/16.png" alt=""></p>
 <p><img src="img/17.png" alt=""></p>
 <p>DefaultContent脚本为</p>
-<pre class=" language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>${ENV, var="JOB_NAME"}-第${BUILD_NUMBER}次构建日志<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span> <span class="token attr-name">leftmargin</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>8<span class="token punctuation">"</span></span> <span class="token attr-name">marginwidth</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">topmargin</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>8<span class="token punctuation">"</span></span> <span class="token attr-name">marginheight</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>4<span class="token punctuation">"</span></span>
-    <span class="token attr-name">offset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>95%<span class="token punctuation">"</span></span> <span class="token attr-name">cellpadding</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">cellspacing</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name">
-        <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">11</span>pt<span class="token punctuation">;</span> <span class="token property">font-family</span><span class="token punctuation">:</span> Tahoma, Arial, Helvetica, sans-serif</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>font</span><span class="token punctuation">></span></span>来自Mr.Jenkins的邮件通知<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>font</span><span class="token punctuation">></span></span>
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/></span></span>
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>b</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>font</span> <span class="token attr-name">color</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#0B610B<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>构建信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>font</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>b</span><span class="token punctuation">></span></span>
-               <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hr</span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>100%<span class="token punctuation">"</span></span> <span class="token attr-name">align</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>center<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>项目名称<span class="token entity" title="&nbsp;">&amp;nbsp;</span>：<span class="token entity" title="&nbsp;">&amp;nbsp;</span>${PROJECT_NAME}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>触发原因<span class="token entity" title="&nbsp;">&amp;nbsp;</span>：${CAUSE}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>
-                        构建日志<span class="token entity" title="&nbsp;">&amp;nbsp;</span>：<span class="token entity" title="&nbsp;">&amp;nbsp;</span>
-                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>${BUILD_URL}console<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;${ENV, var=&quot;JOB_NAME&quot;}-第${BUILD_NUMBER}次构建日志&lt;/title&gt;
+&lt;/head&gt;
+&lt;body leftmargin=&quot;8&quot; marginwidth=&quot;0&quot; topmargin=&quot;8&quot; marginheight=&quot;4&quot;
+    offset=&quot;0&quot;&gt;
+    &lt;table width=&quot;95%&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot;
+        style=&quot;font-size: 11pt; font-family: Tahoma, Arial, Helvetica, sans-serif&quot;&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                &lt;h2&gt;
+                    &lt;font&gt;来自Mr.Jenkins的邮件通知&lt;/font&gt;
+                &lt;/h2&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                &lt;br /&gt;
+                &lt;b&gt;&lt;font color=&quot;#0B610B&quot;&gt;构建信息&lt;/font&gt;&lt;/b&gt;
+               &lt;hr size=&quot;2&quot; width=&quot;100%&quot; align=&quot;center&quot; /&gt;
+             &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;项目名称&amp;nbsp;：&amp;nbsp;${PROJECT_NAME}&lt;/li&gt;
+                    &lt;li&gt;触发原因&amp;nbsp;：${CAUSE}&lt;/li&gt;
+                    &lt;li&gt;
+                        构建日志&amp;nbsp;：&amp;nbsp;
+                        &lt;a href=&quot;${BUILD_URL}console&quot;&gt;
                             ${BUILD_URL}console
-                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>
-                        单元测试报告<span class="token entity" title="&nbsp;">&amp;nbsp;</span>：
-                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>${BUILD_URL}testReport/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        单元测试报告&amp;nbsp;：
+                        &lt;a href=&quot;${BUILD_URL}testReport/&quot;&gt;
                             ${BUILD_URL}testReport/
-                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>
-                        测试报告<span class="token entity" title="&nbsp;">&amp;nbsp;</span>：<span class="token entity" title="&nbsp;">&amp;nbsp;</span>
-                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>${PROJECT_URL}ws<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        测试报告&amp;nbsp;：&amp;nbsp;
+                        &lt;a href=&quot;${PROJECT_URL}ws&quot;&gt;
                             ${PROJECT_URL}ws/trunk/code/LopWeb/target/site/surefire-report.html
-                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
-                   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>
-                       覆盖率报告<span class="token entity" title="&nbsp;">&amp;nbsp;</span>：<span class="token entity" title="&nbsp;">&amp;nbsp;</span>
-                       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>${PROJECT_URL}ws/trunk/code/LopWeb/target/site/jacoco/index.html<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                   &lt;li&gt;
+                       覆盖率报告&amp;nbsp;：&amp;nbsp;
+                       &lt;a href=&quot;${PROJECT_URL}ws/trunk/code/LopWeb/target/site/jacoco/index.html&quot;&gt;
                            ${PROJECT_URL}ws
-                       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
-                   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>
-                       工作目录<span class="token entity" title="&nbsp;">&amp;nbsp;</span>：<span class="token entity" title="&nbsp;">&amp;nbsp;</span>
-                       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>${PROJECT_URL}ws<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                       &lt;/a&gt;
+                    &lt;/li&gt;
+                   &lt;li&gt;
+                       工作目录&amp;nbsp;：&amp;nbsp;
+                       &lt;a href=&quot;${PROJECT_URL}ws&quot;&gt;
                            ${PROJECT_URL}ws
-                       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+                       &lt;/a&gt;
+                    &lt;/li&gt;
 
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>b</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>font</span> <span class="token attr-name">color</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#0B610B<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>构建日志:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>font</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>b</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hr</span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>100%<span class="token punctuation">"</span></span> <span class="token attr-name">align</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>center<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>textarea</span> <span class="token attr-name">cols</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>80<span class="token punctuation">"</span></span> <span class="token attr-name">rows</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>30<span class="token punctuation">"</span></span> <span class="token attr-name">readonly</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>readonly<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name">
-                    <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">font-family</span><span class="token punctuation">:</span> Courier New</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>${BUILD_LOG}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>textarea</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span><span class="token punctuation">></span></span> 
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>  
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>覆盖率报告<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span>  
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>${FILE ,path="C:/Program Files (x86)/Jenkins/workspace/
-                    DOM/trunk/code/LopWeb/target/site/jacoco/index.html"}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">></span></span> 
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
+                &lt;/ul&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+                &lt;tr&gt;
+            &lt;td&gt;&lt;b&gt;&lt;font color=&quot;#0B610B&quot;&gt;构建日志:&lt;/font&gt;&lt;/b&gt;
+            &lt;hr size=&quot;2&quot; width=&quot;100%&quot; align=&quot;center&quot; /&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;textarea cols=&quot;80&quot; rows=&quot;30&quot; readonly=&quot;readonly&quot;
+                    style=&quot;font-family: Courier New&quot;&gt;${BUILD_LOG}&lt;/textarea&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;div&gt;
+    &lt;table&gt; 
+        &lt;tr&gt;  
+            &lt;th&gt;&lt;br /&gt;
+            &lt;h2&gt;覆盖率报告&lt;/h2&gt;
+            &lt;/th&gt;  
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                &lt;div&gt;${FILE ,path=&quot;C:/Program Files (x86)/Jenkins/workspace/
+                    DOM/trunk/code/LopWeb/target/site/jacoco/index.html&quot;}&lt;/div&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt; 
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
 <p>通过SSH将Jenkins从svn拉取的代码通过maven打包war发送到远程服务器进行部署</p>
 <p><img src="img/18.png" alt=""></p>
 <h3 id="创建并配置项目"><a href="#创建并配置项目" class="headerlink" title="创建并配置项目"></a>创建并配置项目</h3><ol>
@@ -599,22 +519,22 @@
 <p>构建前先执行如下命令，未设置 chmod 777 restart-tomcat8.sh 脚本会执行失败。</p>
 <p><img src="img/5.png" alt=""></p>
 <p>脚本内容如下：</p>
-<pre class=" language-shell"><code class="language-shell">#/bin/bash
+<pre><code class="shell">#/bin/bash
 #这一句必须得有，不然会执行失败，路径根据实际情况配置
 export JAVA_HOME=/data/jdk1.8.0_161
 #先删除tomcat下之前打的war包及其解压包
 rm -rf /data/jenkins/tomcat/tomcat8/webapps/LopWeb*
-echo -e "\n\n\n"
+echo -e &quot;\n\n\n&quot;
 
 #force kill flag,if equal [f] to force kill all
-flag="HelloShell"
+flag=&quot;HelloShell&quot;
 if test $# -gt 0
 then
     flag=$1
 fi
 
-pids=`ps -ef|grep tomcat8 | grep -v "grep" | awk '{print $2}'`
-#pids=`ps -ef|grep -w tomcat | grep -v "grep" | awk '{print $2}'`
+pids=`ps -ef|grep tomcat8 | grep -v &quot;grep&quot; | awk &#39;{print $2}&#39;`
+#pids=`ps -ef|grep -w tomcat | grep -v &quot;grep&quot; | awk &#39;{print $2}&#39;`
 
 count=0
 pid_num=0
@@ -626,54 +546,54 @@ done
 
 if test $[count] -gt 1
 then
-    if test $flag = "f"
+    if test $flag = &quot;f&quot;
     then
         for pid in ${pids}
         do
-            echo "kill " ${pid}
+            echo &quot;kill &quot; ${pid}
             kill -9 ${pid}
         done
-        echo "Force kill more progress success!"
+        echo &quot;Force kill more progress success!&quot;
     else
-        echo "Exist more progress is running, Input param [f] to force kill."
+        echo &quot;Exist more progress is running, Input param [f] to force kill.&quot;
     fi
 else
     if test $[count] -eq 1
     then
         kill -9 ${pid_num}
-        echo "Kill " ${pid_num} " Success!"
+        echo &quot;Kill &quot; ${pid_num} &quot; Success!&quot;
     else
-        echo "Clear!"
+        echo &quot;Clear!&quot;
     fi
 fi
 # start
-echo "start tomcat8"
+echo &quot;start tomcat8&quot;
 bash /data/jenkins/tomcat/tomcat8/bin/startup.sh
-echo -e "\n\n\n"
+echo -e &quot;\n\n\n&quot;
 </code></pre>
 <ol start="5">
 <li><p>Build</p>
 <p><strong>RootPOM</strong>：项目中pom.xml地址。</p>
 <p><strong>Goals and options:</strong>目的是maven 打包执行的命令。mvn surefire-report:report 作用是生成代码测试报告。若需要生成测试报告则需要在项目pom.xml文件中加入如下配置：</p>
-<pre class=" language-xml"><code class="language-xml">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugin</span><span class="token punctuation">></span></span>
-     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.apache.maven.plugins<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>maven-surefire-plugin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>3.0.0-M3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>testFailureIgnore</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>testFailureIgnore</span><span class="token punctuation">></span></span>
-        <span class="token comment" spellcheck="true">&lt;!-- 限定跑哪些测试类 --></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>includes</span><span class="token punctuation">></span></span>
-          <span class="token comment" spellcheck="true">&lt;!-- "**/Test*.java" - includes all of its 
-subdirectories and all Java filenames that start with "Test". --></span>
-          <span class="token comment" spellcheck="true">&lt;!-- "**/*Test.java" - includes all of its subdirectories 
-and all Java filenames that end with "Test". --></span>
-          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>include</span><span class="token punctuation">></span></span>**/*Test.java<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>include</span><span class="token punctuation">></span></span>
-          <span class="token comment" spellcheck="true">&lt;!-- 支持正则 http://maven.apache.org/surefire/
-maven-surefire-plugin/examples/inclusion-exclusion.html--></span>
-          <span class="token comment" spellcheck="true">&lt;!-- &lt;include>%regex[.*(Cat|Dog).*Test.*]&lt;/include> --></span>
-         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>includes</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span>
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugin</span><span class="token punctuation">></span></span></code></pre>
+<pre><code class="xml">  &lt;plugin&gt;
+     &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+     &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;
+     &lt;version&gt;3.0.0-M3&lt;/version&gt;
+     &lt;configuration&gt;
+        &lt;testFailureIgnore&gt;true&lt;/testFailureIgnore&gt;
+        &lt;!-- 限定跑哪些测试类 --&gt;
+        &lt;includes&gt;
+          &lt;!-- &quot;**/Test*.java&quot; - includes all of its 
+subdirectories and all Java filenames that start with &quot;Test&quot;. --&gt;
+          &lt;!-- &quot;**/*Test.java&quot; - includes all of its subdirectories 
+and all Java filenames that end with &quot;Test&quot;. --&gt;
+          &lt;include&gt;**/*Test.java&lt;/include&gt;
+          &lt;!-- 支持正则 http://maven.apache.org/surefire/
+maven-surefire-plugin/examples/inclusion-exclusion.html--&gt;
+          &lt;!-- &lt;include&gt;%regex[.*(Cat|Dog).*Test.*]&lt;/include&gt; --&gt;
+         &lt;/includes&gt;
+      &lt;/configuration&gt;
+   &lt;/plugin&gt;</code></pre>
 <p><img src="img/6.png" alt=""></p>
 </li>
 <li><p>构建后操作</p>
@@ -689,24 +609,24 @@ maven-surefire-plugin/examples/inclusion-exclusion.html--></span>
 <p><img src="img/20.png" alt=""></p>
 <p>邮件内容如下</p>
 <p><img src="img/21.png" alt=""></p>
-<h3 id="构建失败的一些问题"><a href="#构建失败的一些问题" class="headerlink" title="构建失败的一些问题"></a>构建失败的一些问题</h3><pre class=" language-java"><code class="language-java">Caused by<span class="token operator">:</span> org<span class="token punctuation">.</span>codehaus<span class="token punctuation">.</span>cargo<span class="token punctuation">.</span>container<span class="token punctuation">.</span>tomcat<span class="token punctuation">.</span>internal<span class="token punctuation">.</span>TomcatManagerException<span class="token operator">:</span>
-The Tomcat Manager responded "FAIL <span class="token operator">-</span> Deployed application at context path <span class="token punctuation">[</span><span class="token operator">/</span>LopWeb<span class="token punctuation">]</span>
+<h3 id="构建失败的一些问题"><a href="#构建失败的一些问题" class="headerlink" title="构建失败的一些问题"></a>构建失败的一些问题</h3><pre><code class="java">Caused by: org.codehaus.cargo.container.tomcat.internal.TomcatManagerException:
+The Tomcat Manager responded &quot;FAIL - Deployed application at context path [/LopWeb]
 but context failed to start
-<span class="token string">" instead of the expected "</span>OK" message
+&quot; instead of the expected &quot;OK&quot; message
     此问题在构建成功，发布到容器时报的错误，一般是项目的问题，此实验为项目数据库未连接成功导致的，
 具体情况可根据数据库日志查看</code></pre>
-<pre class=" language-java"><code class="language-java"><span class="token punctuation">[</span>ERROR<span class="token punctuation">]</span> Failed to execute goal on project LopWeb<span class="token operator">:</span>
-Could not resolve dependencies <span class="token keyword">for</span> project com<span class="token punctuation">.</span>asiainfo<span class="token punctuation">.</span>lop<span class="token operator">:</span>LopWeb<span class="token operator">:</span>war<span class="token operator">:</span><span class="token number">1.0</span><span class="token operator">-</span>SNAPSHOT<span class="token operator">:</span>
-The following artifacts could not be resolved<span class="token operator">:</span> 
-com<span class="token punctuation">.</span>ibm<span class="token punctuation">.</span>db2<span class="token operator">:</span>db2jcc<span class="token operator">:</span>jar<span class="token operator">:</span><span class="token number">9.7</span><span class="token punctuation">,</span> com<span class="token punctuation">.</span>ibm<span class="token punctuation">.</span>db2<span class="token operator">:</span>db2java<span class="token operator">:</span>jar<span class="token operator">:</span><span class="token number">9.7</span><span class="token operator">:</span>
-Failure to find com<span class="token punctuation">.</span>ibm<span class="token punctuation">.</span>db2<span class="token operator">:</span>db2jcc<span class="token operator">:</span>jar<span class="token operator">:</span><span class="token number">9.7</span> in
-http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span><span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">1.8</span><span class="token operator">:</span><span class="token number">8081</span><span class="token operator">/</span>repository<span class="token operator">/</span>maven<span class="token operator">-</span><span class="token keyword">public</span> was cached in the local repository<span class="token punctuation">,</span>
+<pre><code class="java">[ERROR] Failed to execute goal on project LopWeb:
+Could not resolve dependencies for project com.asiainfo.lop:LopWeb:war:1.0-SNAPSHOT:
+The following artifacts could not be resolved: 
+com.ibm.db2:db2jcc:jar:9.7, com.ibm.db2:db2java:jar:9.7:
+Failure to find com.ibm.db2:db2jcc:jar:9.7 in
+http://192.168.1.8:8081/repository/maven-public was cached in the local repository,
 resolution will not be reattempted until the update interval of asiaInfomaven has
-elapsed or updates are forced <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">[</span>Help <span class="token number">1</span><span class="token punctuation">]</span>
+elapsed or updates are forced -&gt; [Help 1]
 缺少相应的jar包</code></pre>
-<pre class=" language-java"><code class="language-java">ERROR<span class="token operator">:</span> Error fetching remote repo <span class="token string">'origin'</span>
-hudson<span class="token punctuation">.</span>plugins<span class="token punctuation">.</span>git<span class="token punctuation">.</span>GitException<span class="token operator">:</span>
-Failed to fetch from ssh<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>git<span class="token annotation punctuation">@10</span><span class="token punctuation">.</span>*<span class="token punctuation">.</span>*<span class="token punctuation">.</span><span class="token number">106</span><span class="token operator">:</span><span class="token number">22022</span><span class="token operator">/</span>DOM<span class="token operator">/</span>LopWeb<span class="token punctuation">.</span>git
+<pre><code class="java">ERROR: Error fetching remote repo &#39;origin&#39;
+hudson.plugins.git.GitException:
+Failed to fetch from ssh://git@10.*.*.106:22022/DOM/LopWeb.git
 连接公司项目git可能需要内网，开启vpn即可</code></pre>
 
             </div>
@@ -924,6 +844,32 @@ Failed to fetch from ssh<span class="token operator">:</span><span class="token 
     </div>
 
     
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: 'https://github.com/zhanghongyu1997/zhanghongyu1997.github.io.git',
+        admin: null,
+        id: '2019-09-16T11-24-00',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
 
     
 
@@ -954,11 +900,7 @@ Failed to fetch from ssh<span class="token operator">:</span><span class="token 
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            shiro架构
-
-subject：主体，可以是用户也可以是程序，主体要访问系统，系统需要对主体进行认证、授权。
-securityManager：安全管理器，主体进行认证和授权都 是通过securityManager进行。
-authentic
+                            Apache Shiro是一个强大且易用的Java安全框架,执行身份验证、授权、密码和会话管理。使用Shiro的易于理解的API,您可以快速、轻松地获得任何应用程序,从最小的移动应用程序到最大的网络和企业应用程序。
                         
                     </div>
                     <div class="publish-info">
@@ -967,8 +909,12 @@ authentic
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            YU
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -1003,8 +949,7 @@ authentic
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            jenkins介绍jenkins概念Jenkins是一个开源的、可扩展的持续集成、交付、部署（软件/代码的编译、打包、部署）的基于web界面的平台。允许持续集成和持续交付项目，无论用的是什么平台，可以处理任何类型的构建或持续集成。
-官网：h
+                            Jenkins是一个开源的、可扩展的持续集成、交付、部署（软件/代码的编译、打包、部署）的基于web界面的平台。允许持续集成和持续交付项目，无论用的是什么平台，可以处理任何类型的构建或持续集成。
                         
                     </div>
                     <div class="publish-info">
@@ -1013,8 +958,12 @@ authentic
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            YU
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -1056,100 +1005,6 @@ authentic
 
 
 <!-- 代码块折行 -->
-
-    </div>
-    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
-            <div id="toc-content"></div>
-        </div>
-    </div>
-</div>
-
-<!-- TOC 悬浮按钮. -->
-
-<div id="floating-toc-btn" class="hide-on-med-and-down">
-    <a class="btn-floating btn-large bg-color">
-        <i class="fas fa-list-ul"></i>
-    </a>
-</div>
-
-
-<script src="/libs/tocbot/tocbot.min.js"></script>
-<script>
-    $(function () {
-        tocbot.init({
-            tocSelector: '#toc-content',
-            contentSelector: '#articleContent',
-            headingsOffset: -($(window).height() * 0.4 - 45),
-            // headingsOffset: -205,
-            headingSelector: 'h2, h3, h4'
-        });
-
-        // modify the toc link href to support Chinese.
-        let i = 0;
-        let tocHeading = 'toc-heading-';
-        $('#toc-content a').each(function () {
-            $(this).attr('href', '#' + tocHeading + (++i));
-        });
-
-        // modify the heading title id to support Chinese.
-        i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
-            $(this).attr('id', tocHeading + (++i));
-        });
-
-        // Set scroll toc fixed.
-        let tocHeight = parseInt($(window).height() * 0.4 - 64);
-        let $tocWidget = $('.toc-widget');
-        $(window).scroll(function () {
-            let scroll = $(window).scrollTop();
-            /* add post toc fixed. */
-            if (scroll > tocHeight) {
-                $tocWidget.addClass('toc-fixed');
-            } else {
-                $tocWidget.removeClass('toc-fixed');
-            }
-        });
-
-        
-        /* 修复文章卡片 div 的宽度. */
-        let fixPostCardWidth = function (srcId, targetId) {
-            let srcDiv = $('#' + srcId);
-            if (srcDiv.length === 0) {
-                return;
-            }
-
-            let w = srcDiv.width();
-            if (w >= 450) {
-                w = w + 21;
-            } else if (w >= 350 && w < 450) {
-                w = w + 18;
-            } else if (w >= 300 && w < 350) {
-                w = w + 16;
-            } else {
-                w = w + 14;
-            }
-            $('#' + targetId).width(w);
-        };
-
-        // 切换TOC目录展开收缩的相关操作.
-        const expandedClass = 'expanded';
-        let $tocAside = $('#toc-aside');
-        let $mainContent = $('#main-content');
-        $('#floating-toc-btn .btn-floating').click(function () {
-            if ($tocAside.hasClass(expandedClass)) {
-                $tocAside.removeClass(expandedClass).hide();
-                $mainContent.removeClass('l9');
-            } else {
-                $tocAside.addClass(expandedClass).show();
-                $mainContent.addClass('l9');
-            }
-            fixPostCardWidth('artDetail', 'prenext-posts');
-        });
-        
-    });
-</script>
 
     
 
@@ -1237,6 +1092,13 @@ authentic
     <a href="https://github.com" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
+
+
+
+    <a href="mailto:1826164270@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
 
 
 

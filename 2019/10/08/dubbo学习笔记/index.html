@@ -28,7 +28,7 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 <body>
@@ -98,7 +98,7 @@
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
-      <span>关于</span>
+      <span>关于我</span>
     </a>
     
   </li>
@@ -120,7 +120,7 @@
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
-      <span>友情链接</span>
+      <span>这有大佬</span>
     </a>
     
   </li>
@@ -259,99 +259,10 @@
 
 
 
-<main class="post-container content">
+<main class="container content">
 
     
-    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
-<style>
-    #articleContent h1::before,
-    #articleContent h2::before,
-    #articleContent h3::before,
-    #articleContent h4::before,
-    #articleContent h5::before,
-    #articleContent h6::before {
-        display: block;
-        content: " ";
-        height: 100px;
-        margin-top: -100px;
-        visibility: hidden;
-    }
-
-    #articleContent :focus {
-        outline: none;
-    }
-
-    .toc-fixed {
-        position: fixed;
-        top: 64px;
-    }
-
-    .toc-widget {
-        padding-left: 20px;
-    }
-
-    .toc-widget .toc-title {
-        margin: 35px 0 15px 0;
-        padding-left: 17px;
-        font-size: 1.5rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
-
-    .toc-widget ol {
-        padding: 0;
-        list-style: none;
-    }
-
-    #toc-content ol {
-        padding-left: 10px;
-    }
-
-    #toc-content ol li {
-        padding-left: 10px;
-    }
-
-    #toc-content .toc-link:hover {
-        color: #42b983;
-        font-weight: 700;
-        text-decoration: underline;
-    }
-
-    #toc-content .toc-link::before {
-        background-color: transparent;
-        max-height: 25px;
-    }
-
-    #toc-content .is-active-link {
-        color: #42b983;
-    }
-
-    #toc-content .is-active-link::before {
-        background-color: #42b983;
-    }
-
-    #floating-toc-btn {
-        position: fixed;
-        right: 15px;
-        bottom: 76px;
-        padding-top: 15px;
-        margin-bottom: 0;
-        z-index: 998;
-    }
-
-    #floating-toc-btn .btn-floating {
-        width: 48px;
-        height: 48px;
-    }
-
-    #floating-toc-btn .btn-floating i {
-        line-height: 48px;
-        font-size: 1.4rem;
-    }
-</style>
-<div class="row">
-    <div id="main-content" class="col s12 m12 l9">
-        <!-- 文章内容详情 -->
+    <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -369,6 +280,15 @@
                 </div>
                 <div class="col s5 right-align">
                     
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Java/" class="post-category">
+                                Java
+                            </a>
+                        
+                    </div>
+                    
                 </div>
             </div>
 
@@ -385,14 +305,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.9k
+                    6.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    23 分
+                    25 分
                 </div>
                 
 				
@@ -492,15 +412,15 @@
 <p>网址 <a href="https://archive.apache.org/dist/zookeeper/zookeeper-3.4.11/" target="_blank" rel="noopener">https://archive.apache.org/dist/zookeeper/zookeeper-3.4.11/</a></p>
 <p>wget <a href="https://archive.apache.org/dist/zookeeper/zookeeper-3.4.11/zookeeper-3.4.11.tar.gz" target="_blank" rel="noopener">https://archive.apache.org/dist/zookeeper/zookeeper-3.4.11/zookeeper-3.4.11.tar.gz</a></p>
 <p>2》解压</p>
-<pre class=" language-shell"><code class="language-shell">tar -zxvf zookeeper-3.4.11.tar.gz</code></pre>
+<pre><code class="shell">tar -zxvf zookeeper-3.4.11.tar.gz</code></pre>
 <p>3》移动到指定位置并改名为zookeeper</p>
-<pre class=" language-shell"><code class="language-shell">mv zookeeper-3.4.11 /usr/local/zookeeper</code></pre>
+<pre><code class="shell">mv zookeeper-3.4.11 /usr/local/zookeeper</code></pre>
 <ol start="3">
 <li><strong>开机启动zookeeper</strong></li>
 </ol>
 </li>
 </ol>
-<pre class=" language-shell"><code class="language-shell">1）-复制如下脚本
+<pre><code class="shell">1）-复制如下脚本
 #!/bin/bash
 #chkconfig:2345 20 90
 #description:zookeeper
@@ -512,7 +432,7 @@ case $1 in
          stop)  sh  $ZK_PATH/bin/zkServer.sh stop;;
          status) sh  $ZK_PATH/bin/zkServer.sh status;;
          restart) sh $ZK_PATH/bin/zkServer.sh restart;;
-         *)  echo "require start|stop|status|restart"  ;;
+         *)  echo &quot;require start|stop|status|restart&quot;  ;;
 esac
 
 2) 把脚本注册为Service
@@ -527,7 +447,7 @@ ll /etc/init.d</code></pre>
 <p>1》初始化zookeeper配置文件</p>
 <p>拷贝/usr/local/zookeeper/conf/zoo_sample.cfg到同一目录下改名为zoo.cfg</p>
 <p>2》启动zookeeper</p>
-<pre class=" language-shell"><code class="language-shell">service zookeeper start</code></pre>
+<pre><code class="shell">service zookeeper start</code></pre>
 </li>
 </ol>
 <h3 id="4、dubbo-helloworld"><a href="#4、dubbo-helloworld" class="headerlink" title="4、dubbo-helloworld"></a>4、dubbo-helloworld</h3><h4 id="4-1）-提出需求"><a href="#4-1）-提出需求" class="headerlink" title="4.1） 提出需求"></a>4.1） 提出需求</h4><p>某个电商系统，订单服务需要调用用户服务获取某个用户的所有地址；</p>
@@ -560,187 +480,187 @@ ll /etc/init.d</code></pre>
 <p>不建议使用过于抽象的通用接口，如：Map query(Map)，这样的接口没有明确语义，会给后期维护带来不便。</p>
 <p><img src="img/11.png" alt=""></p>
 <h4 id="4-3-创建模块"><a href="#4-3-创建模块" class="headerlink" title="4.3) 创建模块"></a>4.3) 创建模块</h4><p>1、gmall-interface：公共接口层（model，service，exception…）</p>
-<pre class=" language-java"><code class="language-java">作用：定义公共接口，也可以导入公共依赖
-<span class="token number">1</span>、Bean模型
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserAddress</span> <span class="token keyword">implements</span> <span class="token class-name">Serializable</span><span class="token punctuation">{</span>
-    <span class="token keyword">private</span> Integer id<span class="token punctuation">;</span>
-    <span class="token keyword">private</span> String userAddress<span class="token punctuation">;</span>
-    <span class="token keyword">private</span> String userId<span class="token punctuation">;</span>
-    <span class="token keyword">private</span> String consignee<span class="token punctuation">;</span>
-    <span class="token keyword">private</span> String phoneNum<span class="token punctuation">;</span>
-    <span class="token keyword">private</span> String isDefault<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<pre><code class="java">作用：定义公共接口，也可以导入公共依赖
+1、Bean模型
+public class UserAddress implements Serializable{
+    private Integer id;
+    private String userAddress;
+    private String userId;
+    private String consignee;
+    private String phoneNum;
+    private String isDefault;
+}
 
-<span class="token number">2</span>、Service接口
+2、Service接口
     UserService
-<span class="token keyword">public</span> List<span class="token operator">&lt;</span>UserAddress<span class="token operator">></span> <span class="token function">getUserAddressList</span><span class="token punctuation">(</span>String userId<span class="token punctuation">)</span></code></pre>
+public List&lt;UserAddress&gt; getUserAddressList(String userId)</code></pre>
 <p>2、gmall-user：用户模块（对用户接口的实现）</p>
-<pre class=" language-xml"><code class="language-xml">1、pom.xml
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencies</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.atguigu.dubbo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>gmall-interface<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>0.0.1-SNAPSHOT<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">></span></span></code></pre>
-<pre class=" language-java"><code class="language-java"><span class="token number">2</span>、Service
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserServiceImpl</span> <span class="token keyword">implements</span> <span class="token class-name">UserService</span> <span class="token punctuation">{</span>
+<pre><code class="xml">1、pom.xml
+  &lt;dependencies&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;com.atguigu.dubbo&lt;/groupId&gt;
+          &lt;artifactId&gt;gmall-interface&lt;/artifactId&gt;
+          &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+      &lt;/dependency&gt;
+  &lt;/dependencies&gt;</code></pre>
+<pre><code class="java">2、Service
+public class UserServiceImpl implements UserService {
 
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> List<span class="token operator">&lt;</span>UserAddress<span class="token operator">></span> <span class="token function">getUserAddressList</span><span class="token punctuation">(</span>String userId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">// TODO Auto-generated method stub</span>
-        <span class="token keyword">return</span> userAddressDao<span class="token punctuation">.</span><span class="token function">getUserAddressById</span><span class="token punctuation">(</span>userId<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    @Override
+    public List&lt;UserAddress&gt; getUserAddressList(String userId) {
+        // TODO Auto-generated method stub
+        return userAddressDao.getUserAddressById(userId);
+    }
 
-<span class="token punctuation">}</span></code></pre>
+}</code></pre>
 <p>3、gmall-order-web：订单模块（调用用户模块）</p>
-<pre class=" language-xml"><code class="language-xml">1、pom.xml
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencies</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.atguigu.dubbo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>gmall-interface<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>0.0.1-SNAPSHOT<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">></span></span></code></pre>
-<pre class=" language-java"><code class="language-java"><span class="token number">2</span>、测试
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">OrderService</span> <span class="token punctuation">{</span>
+<pre><code class="xml">1、pom.xml
+&lt;dependencies&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;com.atguigu.dubbo&lt;/groupId&gt;
+          &lt;artifactId&gt;gmall-interface&lt;/artifactId&gt;
+          &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+      &lt;/dependency&gt;
+   &lt;/dependencies&gt;</code></pre>
+<pre><code class="java">2、测试
+public class OrderService {
 
-    UserService userService<span class="token punctuation">;</span>
+    UserService userService;
 
-    <span class="token comment" spellcheck="true">/**
+    /**
      * 初始化订单，查询用户的所有地址并返回
      * @param userId
      * @return
-     */</span>
-    <span class="token keyword">public</span> List<span class="token operator">&lt;</span>UserAddress<span class="token operator">></span> <span class="token function">initOrder</span><span class="token punctuation">(</span>String userId<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">return</span> userService<span class="token punctuation">.</span><span class="token function">getUserAddressList</span><span class="token punctuation">(</span>userId<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+     */
+    public List&lt;UserAddress&gt; initOrder(String userId){
+        return userService.getUserAddressList(userId);
+    }
 
-<span class="token punctuation">}</span></code></pre>
+}</code></pre>
 <p>现在这样是无法进行调用的。我们gmall-order-web引入了gmall-interface，但是interface的实现是gmall-user，我们并没有引入，而且实际他可能还在别的服务器中。</p>
 <h4 id="4-4-使用dubbo改造"><a href="#4-4-使用dubbo改造" class="headerlink" title="4.4) 使用dubbo改造"></a>4.4) 使用dubbo改造</h4><p>1、改造gmall-user作为服务提供者</p>
-<pre class=" language-xml"><code class="language-xml">1、引入dubbo
-        <span class="token comment" spellcheck="true">&lt;!-- 引入dubbo --></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.alibaba<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>dubbo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>2.6.2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-    <span class="token comment" spellcheck="true">&lt;!-- 由于我们使用zookeeper作为注册中心，所以需要操作zookeeper
+<pre><code class="xml">1、引入dubbo
+        &lt;!-- 引入dubbo --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
+            &lt;artifactId&gt;dubbo&lt;/artifactId&gt;
+            &lt;version&gt;2.6.2&lt;/version&gt;
+        &lt;/dependency&gt;
+    &lt;!-- 由于我们使用zookeeper作为注册中心，所以需要操作zookeeper
 dubbo 2.6以前的版本引入zkclient操作zookeeper 
 dubbo 2.6及以后的版本引入curator操作zookeeper
 下面两个zk客户端根据dubbo版本2选1即可
---></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.101tec<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>zkclient<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>0.10<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-        <span class="token comment" spellcheck="true">&lt;!-- curator-framework --></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.apache.curator<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>curator-framework<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>2.12.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span></code></pre>
-<pre class=" language-xml"><code class="language-xml">2、配置提供者
-<span class="token comment" spellcheck="true">&lt;!--当前应用的名字  --></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">dubbo:</span>application</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>gmall-user<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">dubbo:</span>application</span><span class="token punctuation">></span></span>
-    <span class="token comment" spellcheck="true">&lt;!--指定注册中心的地址  --></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">dubbo:</span>registry</span> <span class="token attr-name">address</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>zookeeper://118.24.44.169:2181<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-    <span class="token comment" spellcheck="true">&lt;!--使用dubbo协议，将服务暴露在20880端口  --></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">dubbo:</span>protocol</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>dubbo<span class="token punctuation">"</span></span> <span class="token attr-name">port</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>20880<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-    <span class="token comment" spellcheck="true">&lt;!-- 指定需要暴露的服务 --></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">dubbo:</span>service</span> <span class="token attr-name">interface</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.atguigu.gmall.service.UserService<span class="token punctuation">"</span></span>
-                   <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>userServiceImpl<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></code></pre>
-<pre class=" language-java"><code class="language-java"><span class="token number">3</span>、启动服务
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException <span class="token punctuation">{</span>
-        ClassPathXmlApplicationContext context <span class="token operator">=</span> 
-                <span class="token keyword">new</span> <span class="token class-name">ClassPathXmlApplicationContext</span><span class="token punctuation">(</span><span class="token string">"classpath:spring-beans.xml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+--&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;com.101tec&lt;/groupId&gt;
+            &lt;artifactId&gt;zkclient&lt;/artifactId&gt;
+            &lt;version&gt;0.10&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;!-- curator-framework --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.apache.curator&lt;/groupId&gt;
+            &lt;artifactId&gt;curator-framework&lt;/artifactId&gt;
+            &lt;version&gt;2.12.0&lt;/version&gt;
+        &lt;/dependency&gt;</code></pre>
+<pre><code class="xml">2、配置提供者
+&lt;!--当前应用的名字  --&gt;
+    &lt;dubbo:application name=&quot;gmall-user&quot;&gt;&lt;/dubbo:application&gt;
+    &lt;!--指定注册中心的地址  --&gt;
+    &lt;dubbo:registry address=&quot;zookeeper://118.24.44.169:2181&quot; /&gt;
+    &lt;!--使用dubbo协议，将服务暴露在20880端口  --&gt;
+    &lt;dubbo:protocol name=&quot;dubbo&quot; port=&quot;20880&quot; /&gt;
+    &lt;!-- 指定需要暴露的服务 --&gt;
+    &lt;dubbo:service interface=&quot;com.atguigu.gmall.service.UserService&quot;
+                   ref=&quot;userServiceImpl&quot; /&gt;</code></pre>
+<pre><code class="java">3、启动服务
+    public static void main(String[] args) throws IOException {
+        ClassPathXmlApplicationContext context = 
+                new ClassPathXmlApplicationContext(&quot;classpath:spring-beans.xml&quot;);
 
-        System<span class="token punctuation">.</span>in<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
-    <span class="token punctuation">}</span></code></pre>
+        System.in.read(); 
+    }</code></pre>
 <p>2、改造gmall-order-web作为服务消费者</p>
-<pre class=" language-xml"><code class="language-xml">1、引入dubbo
-        <span class="token comment" spellcheck="true">&lt;!-- 引入dubbo --></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.alibaba<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>dubbo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>2.6.2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-    <span class="token comment" spellcheck="true">&lt;!-- 由于我们使用zookeeper作为注册中心，所以需要引入zkclient和curator操作zookeeper --></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.101tec<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>zkclient<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>0.10<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-        <span class="token comment" spellcheck="true">&lt;!-- curator-framework --></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.apache.curator<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>curator-framework<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>2.12.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span></code></pre>
-<pre class=" language-xml"><code class="language-xml">2、配置消费者信息
-<span class="token comment" spellcheck="true">&lt;!-- 应用名 --></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">dubbo:</span>application</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>gmall-order-web<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">dubbo:</span>application</span><span class="token punctuation">></span></span>
-    <span class="token comment" spellcheck="true">&lt;!-- 指定注册中心地址 --></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">dubbo:</span>registry</span> <span class="token attr-name">address</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>zookeeper://118.24.44.169:2181<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-    <span class="token comment" spellcheck="true">&lt;!-- 生成远程服务代理，可以和本地bean一样使用demoService --></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">dubbo:</span>reference</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>userService<span class="token punctuation">"</span></span> 
-     <span class="token attr-name">interface</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.atguigu.gmall.service.UserService<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">dubbo:</span>reference</span><span class="token punctuation">></span></span></code></pre>
+<pre><code class="xml">1、引入dubbo
+        &lt;!-- 引入dubbo --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
+            &lt;artifactId&gt;dubbo&lt;/artifactId&gt;
+            &lt;version&gt;2.6.2&lt;/version&gt;
+        &lt;/dependency&gt;
+    &lt;!-- 由于我们使用zookeeper作为注册中心，所以需要引入zkclient和curator操作zookeeper --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;com.101tec&lt;/groupId&gt;
+            &lt;artifactId&gt;zkclient&lt;/artifactId&gt;
+            &lt;version&gt;0.10&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;!-- curator-framework --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.apache.curator&lt;/groupId&gt;
+            &lt;artifactId&gt;curator-framework&lt;/artifactId&gt;
+            &lt;version&gt;2.12.0&lt;/version&gt;
+        &lt;/dependency&gt;</code></pre>
+<pre><code class="xml">2、配置消费者信息
+&lt;!-- 应用名 --&gt;
+    &lt;dubbo:application name=&quot;gmall-order-web&quot;&gt;&lt;/dubbo:application&gt;
+    &lt;!-- 指定注册中心地址 --&gt;
+    &lt;dubbo:registry address=&quot;zookeeper://118.24.44.169:2181&quot; /&gt;
+    &lt;!-- 生成远程服务代理，可以和本地bean一样使用demoService --&gt;
+    &lt;dubbo:reference id=&quot;userService&quot; 
+     interface=&quot;com.atguigu.gmall.service.UserService&quot;&gt;&lt;/dubbo:reference&gt;</code></pre>
 <p>3、测试调用</p>
 <p>访问gmall-order-web的initOrder请求，会调用UserService获取用户地址；</p>
 <p>调用成功。说明我们order已经可以调用远程的UserService了；</p>
 <p>4、注解版</p>
-<pre class=" language-java"><code class="language-java"><span class="token number">1</span>、服务提供方
-    <span class="token operator">&lt;</span>dubbo<span class="token operator">:</span>application name<span class="token operator">=</span><span class="token string">"gmall-user"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>dubbo<span class="token operator">:</span>application<span class="token operator">></span>
-    <span class="token operator">&lt;</span>dubbo<span class="token operator">:</span>registry address<span class="token operator">=</span><span class="token string">"zookeeper://118.24.44.169:2181"</span> <span class="token operator">/</span><span class="token operator">></span>
-    <span class="token operator">&lt;</span>dubbo<span class="token operator">:</span>protocol name<span class="token operator">=</span><span class="token string">"dubbo"</span> port<span class="token operator">=</span><span class="token string">"20880"</span> <span class="token operator">/</span><span class="token operator">></span>
-<span class="token operator">&lt;</span>dubbo<span class="token operator">:</span>annotation <span class="token keyword">package</span><span class="token operator">=</span><span class="token string">"com.atguigu.gmall.user.impl"</span><span class="token operator">/</span><span class="token operator">></span>
+<pre><code class="java">1、服务提供方
+    &lt;dubbo:application name=&quot;gmall-user&quot;&gt;&lt;/dubbo:application&gt;
+    &lt;dubbo:registry address=&quot;zookeeper://118.24.44.169:2181&quot; /&gt;
+    &lt;dubbo:protocol name=&quot;dubbo&quot; port=&quot;20880&quot; /&gt;
+&lt;dubbo:annotation package=&quot;com.atguigu.gmall.user.impl&quot;/&gt;
 
-<span class="token keyword">import</span> com<span class="token punctuation">.</span>alibaba<span class="token punctuation">.</span>dubbo<span class="token punctuation">.</span>config<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Service<span class="token punctuation">;</span>
-<span class="token keyword">import</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>gmall<span class="token punctuation">.</span>bean<span class="token punctuation">.</span>UserAddress<span class="token punctuation">;</span>
-<span class="token keyword">import</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>gmall<span class="token punctuation">.</span>service<span class="token punctuation">.</span>UserService<span class="token punctuation">;</span>
-<span class="token keyword">import</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>gmall<span class="token punctuation">.</span>user<span class="token punctuation">.</span>mapper<span class="token punctuation">.</span>UserAddressMapper<span class="token punctuation">;</span>
+import com.alibaba.dubbo.config.annotation.Service;
+import com.atguigu.gmall.bean.UserAddress;
+import com.atguigu.gmall.service.UserService;
+import com.atguigu.gmall.user.mapper.UserAddressMapper;
 
-<span class="token annotation punctuation">@Service</span> <span class="token comment" spellcheck="true">//使用dubbo提供的service注解，注册暴露服务</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserServiceImpl</span> <span class="token keyword">implements</span> <span class="token class-name">UserService</span> <span class="token punctuation">{</span>
+@Service //使用dubbo提供的service注解，注册暴露服务
+public class UserServiceImpl implements UserService {
 
-    <span class="token annotation punctuation">@Autowired</span>
-    UserAddressMapper userAddressMapper<span class="token punctuation">;</span></code></pre>
-<pre class=" language-java"><code class="language-java"><span class="token number">2</span>、服务消费方
-<span class="token operator">&lt;</span>dubbo<span class="token operator">:</span>application name<span class="token operator">=</span><span class="token string">"gmall-order-web"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>dubbo<span class="token operator">:</span>application<span class="token operator">></span>
-<span class="token operator">&lt;</span>dubbo<span class="token operator">:</span>registry address<span class="token operator">=</span><span class="token string">"zookeeper://118.24.44.169:2181"</span> <span class="token operator">/</span><span class="token operator">></span>
-<span class="token operator">&lt;</span>dubbo<span class="token operator">:</span>annotation <span class="token keyword">package</span><span class="token operator">=</span><span class="token string">"com.atguigu.gmall.order.controller"</span><span class="token operator">/</span><span class="token operator">></span>
+    @Autowired
+    UserAddressMapper userAddressMapper;</code></pre>
+<pre><code class="java">2、服务消费方
+&lt;dubbo:application name=&quot;gmall-order-web&quot;&gt;&lt;/dubbo:application&gt;
+&lt;dubbo:registry address=&quot;zookeeper://118.24.44.169:2181&quot; /&gt;
+&lt;dubbo:annotation package=&quot;com.atguigu.gmall.order.controller&quot;/&gt;
 
-<span class="token annotation punctuation">@Controller</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">OrderController</span> <span class="token punctuation">{</span>
+@Controller
+public class OrderController {
 
-    <span class="token annotation punctuation">@Reference</span>  <span class="token comment" spellcheck="true">//使用dubbo提供的reference注解引用远程服务</span>
-    UserService userService<span class="token punctuation">;</span></code></pre>
+    @Reference  //使用dubbo提供的reference注解引用远程服务
+    UserService userService;</code></pre>
 <h3 id="5、监控中心"><a href="#5、监控中心" class="headerlink" title="5、监控中心"></a>5、监控中心</h3><h4 id="5-1）、dubbo-admin"><a href="#5-1）、dubbo-admin" class="headerlink" title="5.1）、dubbo-admin"></a>5.1）、dubbo-admin</h4><p>图形化的服务管理页面；安装时需要指定注册中心地址，即可从注册中心中获取到所有的提供者/消费者进行配置管理</p>
 <h4 id="5-2）、dubbo-monitor-simple"><a href="#5-2）、dubbo-monitor-simple" class="headerlink" title="5.2）、dubbo-monitor-simple"></a>5.2）、dubbo-monitor-simple</h4><p>略</p>
-<h3 id="6、整合SpringBoot"><a href="#6、整合SpringBoot" class="headerlink" title="6、整合SpringBoot"></a>6、整合SpringBoot</h3><h4 id="引入spring-boot-starter以及dubbo和curator的依赖"><a href="#引入spring-boot-starter以及dubbo和curator的依赖" class="headerlink" title="引入spring-boot-starter以及dubbo和curator的依赖"></a>引入spring-boot-starter以及dubbo和curator的依赖</h4><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.alibaba.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>dubbo-spring-boot-starter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>0.2.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span></code></pre>
-<h4 id="配置application-properties"><a href="#配置application-properties" class="headerlink" title="配置application.properties"></a>配置application.properties</h4><pre class=" language-properties"><code class="language-properties">提供者配置：
-<span class="token attr-name">dubbo.application.name</span><span class="token punctuation">=</span><span class="token attr-value">gmall-user</span>
-<span class="token attr-name">dubbo.registry.protocol</span><span class="token punctuation">=</span><span class="token attr-value">zookeeper</span>
-<span class="token attr-name">dubbo.registry.address</span><span class="token punctuation">=</span><span class="token attr-value">192.168.67.159:2181</span>
-<span class="token attr-name">dubbo.scan.base-package</span><span class="token punctuation">=</span><span class="token attr-value">com.atguigu.gmall</span>
-<span class="token attr-name">dubbo.protocol.name</span><span class="token punctuation">=</span><span class="token attr-value">dubbo</span>
+<h3 id="6、整合SpringBoot"><a href="#6、整合SpringBoot" class="headerlink" title="6、整合SpringBoot"></a>6、整合SpringBoot</h3><h4 id="引入spring-boot-starter以及dubbo和curator的依赖"><a href="#引入spring-boot-starter以及dubbo和curator的依赖" class="headerlink" title="引入spring-boot-starter以及dubbo和curator的依赖"></a>引入spring-boot-starter以及dubbo和curator的依赖</h4><pre><code class="xml">&lt;dependency&gt;
+    &lt;groupId&gt;com.alibaba.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;dubbo-spring-boot-starter&lt;/artifactId&gt;
+    &lt;version&gt;0.2.0&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+<h4 id="配置application-properties"><a href="#配置application-properties" class="headerlink" title="配置application.properties"></a>配置application.properties</h4><pre><code class="properties">提供者配置：
+dubbo.application.name=gmall-user
+dubbo.registry.protocol=zookeeper
+dubbo.registry.address=192.168.67.159:2181
+dubbo.scan.base-package=com.atguigu.gmall
+dubbo.protocol.name=dubbo
 application.name就是服务名，不能跟别的dubbo提供端重复
-<span class="token attr-name">registry.protocol</span> <span class="token attr-value">是指定注册中心协议</span>
-<span class="token attr-name">registry.address</span> <span class="token attr-value">是注册中心的地址加端口号</span>
-<span class="token attr-name">protocol.name</span> <span class="token attr-value">是分布式固定是dubbo,不要改。</span>
-<span class="token attr-name">base-package</span> <span class="token attr-value"> 注解方式要扫描的包</span>
+registry.protocol 是指定注册中心协议
+registry.address 是注册中心的地址加端口号
+protocol.name 是分布式固定是dubbo,不要改。
+base-package  注解方式要扫描的包
 消费者配置：
-<span class="token attr-name">dubbo.application.name</span><span class="token punctuation">=</span><span class="token attr-value">gmall-order-web</span>
-<span class="token attr-name">dubbo.registry.protocol</span><span class="token punctuation">=</span><span class="token attr-value">zookeeper</span>
-<span class="token attr-name">dubbo.registry.address</span><span class="token punctuation">=</span><span class="token attr-value">192.168.67.159:2181</span>
-<span class="token attr-name">dubbo.scan.base-package</span><span class="token punctuation">=</span><span class="token attr-value">com.atguigu.gmall</span>
-<span class="token attr-name">dubbo.protocol.name</span><span class="token punctuation">=</span><span class="token attr-value">dubbo</span></code></pre>
+dubbo.application.name=gmall-order-web
+dubbo.registry.protocol=zookeeper
+dubbo.registry.address=192.168.67.159:2181
+dubbo.scan.base-package=com.atguigu.gmall
+dubbo.protocol.name=dubbo</code></pre>
 <h4 id="dubbo注解"><a href="#dubbo注解" class="headerlink" title="dubbo注解"></a>dubbo注解</h4><p>@Service、@Reference</p>
 <p><strong>【如果没有在配置中写dubbo.scan.base-package,还需要使用@EnableDubbo注解】</strong></p>
 <h2 id="二、dubbo配置"><a href="#二、dubbo配置" class="headerlink" title="二、dubbo配置"></a>二、dubbo配置</h2><h3 id="1、配置原则"><a href="#1、配置原则" class="headerlink" title="1、配置原则"></a>1、配置原则</h3><p><img src="img/12.png" alt=""></p>
@@ -748,29 +668,29 @@ application.name就是服务名，不能跟别的dubbo提供端重复
 <p>XML 次之，如果在 XML 中有配置，则 dubbo.properties 中的相应配置项无效。</p>
 <p>Properties 最后，相当于缺省值，只有 XML 没有配置时，dubbo.properties 的相应配置项才会生效，通常用于共享公共配置，比如应用名。</p>
 <h3 id="2、重试次数"><a href="#2、重试次数" class="headerlink" title="2、重试次数"></a>2、重试次数</h3><p>失败自动切换，当出现失败，重试其它服务器，但重试会带来更长延迟。可通过 retries=”2” 来设置重试次数(不含第一次)。</p>
-<pre class=" language-xml"><code class="language-xml">重试次数配置如下：
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">dubbo:</span>service</span> <span class="token attr-name">retries</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<pre><code class="xml">重试次数配置如下：
+&lt;dubbo:service retries=&quot;2&quot; /&gt;
 或
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">dubbo:</span>reference</span> <span class="token attr-name">retries</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+&lt;dubbo:reference retries=&quot;2&quot; /&gt;
 或
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">dubbo:</span>reference</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">dubbo:</span>method</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>findFoo<span class="token punctuation">"</span></span> <span class="token attr-name">retries</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">dubbo:</span>reference</span><span class="token punctuation">></span></span></code></pre>
+&lt;dubbo:reference&gt;
+    &lt;dubbo:method name=&quot;findFoo&quot; retries=&quot;2&quot; /&gt;
+&lt;/dubbo:reference&gt;</code></pre>
 <h3 id="3、超时时间"><a href="#3、超时时间" class="headerlink" title="3、超时时间"></a>3、超时时间</h3><p>由于网络或服务端不可靠，会导致调用出现一种不确定的中间状态（超时）。为了避免超时导致客户端资源（线程）挂起耗尽，必须设置超时时间。</p>
-<h4 id="1、Dubbo消费端"><a href="#1、Dubbo消费端" class="headerlink" title="1、Dubbo消费端"></a>1、Dubbo消费端</h4><pre class=" language-xml"><code class="language-xml">全局超时配置
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">dubbo:</span>consumer</span> <span class="token attr-name">timeout</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>5000<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<h4 id="1、Dubbo消费端"><a href="#1、Dubbo消费端" class="headerlink" title="1、Dubbo消费端"></a>1、Dubbo消费端</h4><pre><code class="xml">全局超时配置
+&lt;dubbo:consumer timeout=&quot;5000&quot; /&gt;
 
 指定接口以及特定方法超时配置
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">dubbo:</span>reference</span> <span class="token attr-name">interface</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.foo.BarService<span class="token punctuation">"</span></span> <span class="token attr-name">timeout</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>2000<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">dubbo:</span>method</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>sayHello<span class="token punctuation">"</span></span> <span class="token attr-name">timeout</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>3000<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">dubbo:</span>reference</span><span class="token punctuation">></span></span></code></pre>
-<h4 id="2、Dubbo服务端"><a href="#2、Dubbo服务端" class="headerlink" title="2、Dubbo服务端"></a>2、Dubbo服务端</h4><pre class=" language-xml"><code class="language-xml">全局超时配置
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">dubbo:</span>provider</span> <span class="token attr-name">timeout</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>5000<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+&lt;dubbo:reference interface=&quot;com.foo.BarService&quot; timeout=&quot;2000&quot;&gt;
+    &lt;dubbo:method name=&quot;sayHello&quot; timeout=&quot;3000&quot; /&gt;
+&lt;/dubbo:reference&gt;</code></pre>
+<h4 id="2、Dubbo服务端"><a href="#2、Dubbo服务端" class="headerlink" title="2、Dubbo服务端"></a>2、Dubbo服务端</h4><pre><code class="xml">全局超时配置
+&lt;dubbo:provider timeout=&quot;5000&quot; /&gt;
 
 指定接口以及特定方法超时配置
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">dubbo:</span>provider</span> <span class="token attr-name">interface</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.foo.BarService<span class="token punctuation">"</span></span> <span class="token attr-name">timeout</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>2000<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">dubbo:</span>method</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>sayHello<span class="token punctuation">"</span></span> <span class="token attr-name">timeout</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>3000<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">dubbo:</span>provider</span><span class="token punctuation">></span></span></code></pre>
+&lt;dubbo:provider interface=&quot;com.foo.BarService&quot; timeout=&quot;2000&quot;&gt;
+    &lt;dubbo:method name=&quot;sayHello&quot; timeout=&quot;3000&quot; /&gt;
+&lt;/dubbo:provider&gt;</code></pre>
 <h4 id="3、配置原则"><a href="#3、配置原则" class="headerlink" title="3、配置原则"></a>3、配置原则</h4><p>dubbo推荐在Provider上尽量多配置Consumer端属性：</p>
 <p><strong>1、作服务的提供者，比服务使用方更清楚服务性能参数，如调用的超时时间，合理的重试次数，等等</strong></p>
 <p><strong>2、在Provider配置后，Consumer不配置则会使用Provider的配置值，即Provider配置可以作为Consumer的缺省值。否则，Consumer会使用Consumer端的全局设置，这对于Provider不可控的，并且往往是不合理的</strong></p>
@@ -784,20 +704,20 @@ application.name就是服务名，不能跟别的dubbo提供端重复
 <p>在低压力时间段，先升级一半提供者为新版本</p>
 <p>再将所有消费者升级为新版本</p>
 <p>然后将剩下的一半提供者升级为新版本</p>
-<pre class=" language-xml"><code class="language-xml">老版本服务提供者配置：
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">dubbo:</span>service</span> <span class="token attr-name">interface</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.foo.BarService<span class="token punctuation">"</span></span> <span class="token attr-name">version</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1.0.0<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<pre><code class="xml">老版本服务提供者配置：
+&lt;dubbo:service interface=&quot;com.foo.BarService&quot; version=&quot;1.0.0&quot; /&gt;
 
 新版本服务提供者配置：
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">dubbo:</span>service</span> <span class="token attr-name">interface</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.foo.BarService<span class="token punctuation">"</span></span> <span class="token attr-name">version</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>2.0.0<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+&lt;dubbo:service interface=&quot;com.foo.BarService&quot; version=&quot;2.0.0&quot; /&gt;
 
 老版本服务消费者配置：
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">dubbo:</span>reference</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>barService<span class="token punctuation">"</span></span> <span class="token attr-name">interface</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.foo.BarService<span class="token punctuation">"</span></span> <span class="token attr-name">version</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1.0.0<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+&lt;dubbo:reference id=&quot;barService&quot; interface=&quot;com.foo.BarService&quot; version=&quot;1.0.0&quot; /&gt;
 
 新版本服务消费者配置：
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">dubbo:</span>reference</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>barService<span class="token punctuation">"</span></span> <span class="token attr-name">interface</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.foo.BarService<span class="token punctuation">"</span></span> <span class="token attr-name">version</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>2.0.0<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+&lt;dubbo:reference id=&quot;barService&quot; interface=&quot;com.foo.BarService&quot; version=&quot;2.0.0&quot; /&gt;
 
 如果不需要区分版本，可以按照以下的方式配置：
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">dubbo:</span>reference</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>barService<span class="token punctuation">"</span></span> <span class="token attr-name">interface</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.foo.BarService<span class="token punctuation">"</span></span> <span class="token attr-name">version</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>*<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></code></pre>
+&lt;dubbo:reference id=&quot;barService&quot; interface=&quot;com.foo.BarService&quot; version=&quot;*&quot; /&gt;</code></pre>
 <h2 id="三、高可用"><a href="#三、高可用" class="headerlink" title="三、高可用"></a>三、高可用</h2><h3 id="1、zookeeper宕机与dubbo直连"><a href="#1、zookeeper宕机与dubbo直连" class="headerlink" title="1、zookeeper宕机与dubbo直连"></a>1、zookeeper宕机与dubbo直连</h3><p>现象：zookeeper注册中心宕机，还可以消费dubbo暴露的服务。</p>
 <p>原因：</p>
 <p><strong>健壮性</strong></p>
@@ -836,10 +756,10 @@ application.name就是服务名，不能跟别的dubbo提供端重复
 <p><strong>当服务器压力剧增的情况下，根据实际业务情况及流量，对一些服务和页面有策略的不处理或换种简单的方式处理，从而释放服务器资源以保证核心交易正常运作或高效运作。</strong></p>
 <p>可以通过服务降级功能临时屏蔽某个出错的非关键服务，并定义降级后的返回策略。</p>
 <p>向注册中心写入动态配置覆盖规则：</p>
-<pre class=" language-java"><code class="language-java">RegistryFactory registryFactory <span class="token operator">=</span> ExtensionLoader<span class="token punctuation">.</span><span class="token function">getExtensionLoader</span><span class="token punctuation">(</span>RegistryFactory<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getAdaptiveExtension</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-Registry registry <span class="token operator">=</span> registryFactory<span class="token punctuation">.</span><span class="token function">getRegistry</span><span class="token punctuation">(</span>URL<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token string">"zookeeper://10.20.153.10:2181"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-registry<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span>URL<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>"override<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span><span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">0.0</span><span class="token operator">/</span>com<span class="token punctuation">.</span>foo<span class="token punctuation">.</span>BarService<span class="token operator">?</span>category<span class="token operator">=</span>configurators<span class="token operator">&amp;</span>dynamic
-                              <span class="token operator">=</span><span class="token boolean">false</span><span class="token operator">&amp;</span>application<span class="token operator">=</span>foo<span class="token operator">&amp;</span>mock<span class="token operator">=</span>force<span class="token operator">:</span><span class="token keyword">return</span><span class="token operator">+</span>null"<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre><code class="java">RegistryFactory registryFactory = ExtensionLoader.getExtensionLoader(RegistryFactory.class).getAdaptiveExtension();
+Registry registry = registryFactory.getRegistry(URL.valueOf(&quot;zookeeper://10.20.153.10:2181&quot;));
+registry.register(URL.valueOf(&quot;override://0.0.0.0/com.foo.BarService?category=configurators&amp;dynamic
+                              =false&amp;application=foo&amp;mock=force:return+null&quot;));</code></pre>
 <p>其中：</p>
 <ul>
 <li><p>mock=force:return+null 表示消费方对该服务的方法调用都直接返回 null 值，不发起远程调用。用来屏蔽不重要服务不可用时对调用方的影响。</p>
@@ -849,17 +769,17 @@ registry<span class="token punctuation">.</span><span class="token function">reg
 </ul>
 <h4 id="2、集群容错"><a href="#2、集群容错" class="headerlink" title="2、集群容错"></a>2、集群容错</h4><p>在集群调用失败时，Dubbo 提供了多种容错方案，缺省为 failover 重试。</p>
 <p><strong>集群容错模式</strong></p>
-<pre class=" language-xml"><code class="language-xml">Failover Cluster
-失败自动切换，当出现失败，重试其它服务器。通常用于读操作，但重试会带来更长延迟。可通过 retries="2" 来设置重试次数(不含第一次)。
+<pre><code class="xml">Failover Cluster
+失败自动切换，当出现失败，重试其它服务器。通常用于读操作，但重试会带来更长延迟。可通过 retries=&quot;2&quot; 来设置重试次数(不含第一次)。
 
 重试次数配置如下：
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">dubbo:</span>service</span> <span class="token attr-name">retries</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+&lt;dubbo:service retries=&quot;2&quot; /&gt;
 或
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">dubbo:</span>reference</span> <span class="token attr-name">retries</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+&lt;dubbo:reference retries=&quot;2&quot; /&gt;
 或
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">dubbo:</span>reference</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">dubbo:</span>method</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>findFoo<span class="token punctuation">"</span></span> <span class="token attr-name">retries</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">dubbo:</span>reference</span><span class="token punctuation">></span></span>
+&lt;dubbo:reference&gt;
+    &lt;dubbo:method name=&quot;findFoo&quot; retries=&quot;2&quot; /&gt;
+&lt;/dubbo:reference&gt;
 
 Failfast Cluster
 快速失败，只发起一次调用，失败立即报错。通常用于非幂等性的写操作，比如新增记录。
@@ -871,16 +791,16 @@ Failback Cluster
 失败自动恢复，后台记录失败请求，定时重发。通常用于消息通知操作。
 
 Forking Cluster
-并行调用多个服务器，只要一个成功即返回。通常用于实时性要求较高的读操作，但需要浪费更多服务资源。可通过 forks="2" 来设置最大并行数。
+并行调用多个服务器，只要一个成功即返回。通常用于实时性要求较高的读操作，但需要浪费更多服务资源。可通过 forks=&quot;2&quot; 来设置最大并行数。
 
 Broadcast Cluster
 广播调用所有提供者，逐个调用，任意一台报错则报错 [2]。通常用于通知所有提供者更新缓存或日志等本地资源信息。
 
 集群模式配置
 按照以下示例在服务提供方和消费方配置集群模式
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">dubbo:</span>service</span> <span class="token attr-name">cluster</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>failsafe<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+&lt;dubbo:service cluster=&quot;failsafe&quot; /&gt;
 或
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">dubbo:</span>reference</span> <span class="token attr-name">cluster</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>failsafe<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></code></pre>
+&lt;dubbo:reference cluster=&quot;failsafe&quot; /&gt;</code></pre>
 <h2 id="四、dubbo原理"><a href="#四、dubbo原理" class="headerlink" title="四、dubbo原理"></a>四、dubbo原理</h2><h3 id="1、netty通信原理"><a href="#1、netty通信原理" class="headerlink" title="1、netty通信原理"></a>1、netty通信原理</h3><p>Netty是一个异步事件驱动的网络应用程序框架， 用于快速开发可维护的高性能协议服务器和客户端。它极大地简化并简化了TCP和UDP套接字服务器等网络编程。</p>
 <p><strong>BIO：(Blocking IO)</strong></p>
 <p><img src="img/14.png" alt=""></p>
@@ -1122,6 +1042,32 @@ Broadcast Cluster
     </div>
 
     
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: 'https://github.com/zhanghongyu1997/zhanghongyu1997.github.io.git',
+        admin: null,
+        id: '2019-10-08T17-42-08',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
 
     
 
@@ -1153,9 +1099,7 @@ Broadcast Cluster
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一、基础知识1. 分布式基础理论1.1） 什么事分布式系统？ 《分布式系统原理与范型》定义：
-“分布式系统是若干独立计算机的集合，这些计算机对于用户来说就像单个相关系统”
-分布式系统（distributed system）是建立在网络之上的
+                            Apache Dubbo是一款高性能、轻量级的开源Java RPC框架，它提供了三大核心能力：面向接口的远程方法调用，智能容错和负载均衡，以及服务自动注册和发现。
                         
                     </div>
                     <div class="publish-info">
@@ -1164,8 +1108,12 @@ Broadcast Cluster
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            YU
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -1201,11 +1149,7 @@ Broadcast Cluster
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            shiro架构
-
-subject：主体，可以是用户也可以是程序，主体要访问系统，系统需要对主体进行认证、授权。
-securityManager：安全管理器，主体进行认证和授权都 是通过securityManager进行。
-authentic
+                            Apache Shiro是一个强大且易用的Java安全框架,执行身份验证、授权、密码和会话管理。使用Shiro的易于理解的API,您可以快速、轻松地获得任何应用程序,从最小的移动应用程序到最大的网络和企业应用程序。
                         
                     </div>
                     <div class="publish-info">
@@ -1214,8 +1158,12 @@ authentic
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            YU
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -1256,100 +1204,6 @@ authentic
 
 
 <!-- 代码块折行 -->
-
-    </div>
-    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
-            <div id="toc-content"></div>
-        </div>
-    </div>
-</div>
-
-<!-- TOC 悬浮按钮. -->
-
-<div id="floating-toc-btn" class="hide-on-med-and-down">
-    <a class="btn-floating btn-large bg-color">
-        <i class="fas fa-list-ul"></i>
-    </a>
-</div>
-
-
-<script src="/libs/tocbot/tocbot.min.js"></script>
-<script>
-    $(function () {
-        tocbot.init({
-            tocSelector: '#toc-content',
-            contentSelector: '#articleContent',
-            headingsOffset: -($(window).height() * 0.4 - 45),
-            // headingsOffset: -205,
-            headingSelector: 'h2, h3, h4'
-        });
-
-        // modify the toc link href to support Chinese.
-        let i = 0;
-        let tocHeading = 'toc-heading-';
-        $('#toc-content a').each(function () {
-            $(this).attr('href', '#' + tocHeading + (++i));
-        });
-
-        // modify the heading title id to support Chinese.
-        i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
-            $(this).attr('id', tocHeading + (++i));
-        });
-
-        // Set scroll toc fixed.
-        let tocHeight = parseInt($(window).height() * 0.4 - 64);
-        let $tocWidget = $('.toc-widget');
-        $(window).scroll(function () {
-            let scroll = $(window).scrollTop();
-            /* add post toc fixed. */
-            if (scroll > tocHeight) {
-                $tocWidget.addClass('toc-fixed');
-            } else {
-                $tocWidget.removeClass('toc-fixed');
-            }
-        });
-
-        
-        /* 修复文章卡片 div 的宽度. */
-        let fixPostCardWidth = function (srcId, targetId) {
-            let srcDiv = $('#' + srcId);
-            if (srcDiv.length === 0) {
-                return;
-            }
-
-            let w = srcDiv.width();
-            if (w >= 450) {
-                w = w + 21;
-            } else if (w >= 350 && w < 450) {
-                w = w + 18;
-            } else if (w >= 300 && w < 350) {
-                w = w + 16;
-            } else {
-                w = w + 14;
-            }
-            $('#' + targetId).width(w);
-        };
-
-        // 切换TOC目录展开收缩的相关操作.
-        const expandedClass = 'expanded';
-        let $tocAside = $('#toc-aside');
-        let $mainContent = $('#main-content');
-        $('#floating-toc-btn .btn-floating').click(function () {
-            if ($tocAside.hasClass(expandedClass)) {
-                $tocAside.removeClass(expandedClass).hide();
-                $mainContent.removeClass('l9');
-            } else {
-                $tocAside.addClass(expandedClass).show();
-                $mainContent.addClass('l9');
-            }
-            fixPostCardWidth('artDetail', 'prenext-posts');
-        });
-        
-    });
-</script>
 
     
 
@@ -1437,6 +1291,13 @@ authentic
     <a href="https://github.com" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
+
+
+
+    <a href="mailto:1826164270@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
 
 
 

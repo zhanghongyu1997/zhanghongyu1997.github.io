@@ -26,7 +26,7 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 <body>
@@ -96,7 +96,7 @@
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
-      <span>关于</span>
+      <span>关于我</span>
     </a>
     
   </li>
@@ -118,7 +118,7 @@
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
-      <span>友情链接</span>
+      <span>这有大佬</span>
     </a>
     
   </li>
@@ -333,15 +333,18 @@
 
             <div class="cover-btns">
                 
-                <a href="https://github.com/" class="waves-effect waves-light btn" target="_blank">
-                    <i class="fab fa-github-alt"></i>Github
-                </a>
-                
             </div>
             <div class="cover-social-link">
     <a href="https://github.com" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
+
+
+
+    <a href="mailto:1826164270@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
 
 
 
@@ -445,12 +448,124 @@ $(function () {
                     
 
                     
+                        
+
+<link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<div class="music-player">
+    
+    <div class="title center-align">
+        <i class="fas fa-music"></i>&nbsp;&nbsp;听听音乐
+    </div>
+    
+    <div class="row">
+        <div class="col l8 offset-l2 m10 offset-m1 s12">
+            <div id="aplayer" class="music"></div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script>
+$(function () {
+    new APlayer({
+        container: document.getElementById('aplayer'),
+        fixed: 'false' === 'true',
+        autoplay: 'false' === 'true',
+        theme: '#42b983',
+        loop: 'all',
+        order: 'list',
+        preload: 'auto',
+        volume: Number('0.7'),
+        listFolded: 'false' === 'true',
+        listMaxHeight: '',
+        audio: JSON.parse('[{"name":"知足","artist":"五月天","url":"http://music.163.com/song/media/outer/url?id=385965.mp3","cover":"https://y.gtimg.cn/music/photo_new/T002R300x300M000003PIMo40rxcAn.jpg?max_age=2592000"},{"name":"怎么了","artist":"周兴哲","url":"http://music.163.com/song/media/outer/url?id=1336990251.mp3","cover":"http://p1.music.126.net/CXKsMcx7O-BYEPBbbkBEdw==/109951163766379624.jpg?param=130y130"},{"name":"繁华唱遍（泠鸢翻唱版）（Cover：乐正绫 调教：纳兰寻风）","artist":"泠鸢yousa","url":"http://music.163.com/song/media/outer/url?id=1344874921.mp3","cover":"http://p1.music.126.net/fxI_iAsaRU9M5ZGE-Pu7iw==/109951164479032071.jpg?param=130y130"}]')
+    });
+});
+</script>
+                    
 
                     
 
                     <div id="recommend-sections" class="recommend">
                         
 
+
+
+
+
+<div class="title"><i class="far fa-thumbs-up"></i>&nbsp;&nbsp;推荐文章</div>
+
+<div class="row">
+
+    
+    
+    <div class="col s12" >
+        <div class="post-card" style="background-image: url('/medias/featureimages/23.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                        
+                            <a href="/categories/Java/" class="category">Java</a>
+                        
+                    
+                </div>
+                <a href="/2019/09/16/jenkins%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/">
+                    <h3 class="post-title">jenkins自动化部署项目</h3>
+                </a>
+                <p class="post-description">Jenkins是一个开源的、可扩展的持续集成、交付、部署（软件/代码的编译、打包、部署）的基于web界面的平台。允许持续集成和持续交付项目，无论用的是什么平台，可以处理任何类型的构建或持续集成。</p>
+                <a href="/2019/09/16/jenkins%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)" target="_blank">
+                    <i class="icon far fa-eye fa-fw"></i>阅读更多
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="col s12 m6" data-aos="zoom-in-up">
+        <div class="post-card" style="background-image: url('/medias/featureimages/7.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                        
+                            <a href="/categories/Java/" class="category">Java</a>
+                        
+                    
+                </div>
+                <a href="/2019/09/18/shiro%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                    <h3 class="post-title">shiro学习笔记</h3>
+                </a>
+                <p class="post-description">Apache Shiro是一个强大且易用的Java安全框架,执行身份验证、授权、密码和会话管理。使用Shiro的易于理解的API,您可以快速、轻松地获得任何应用程序,从最小的移动应用程序到最大的网络和企业应用程序。</p>
+                <a href="/2019/09/18/shiro%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #EF4DB6 0%, #C643FC 100%)" target="_blank">
+                    <i class="icon far fa-eye fa-fw"></i>阅读更多
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="col s12 m6" data-aos="zoom-in-up">
+        <div class="post-card" style="background-image: url('/medias/featureimages/20.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                        
+                            <a href="/categories/Java/" class="category">Java</a>
+                        
+                    
+                </div>
+                <a href="/2019/10/08/dubbo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                    <h3 class="post-title">dubbo学习笔记</h3>
+                </a>
+                <p class="post-description">Apache Dubbo是一款高性能、轻量级的开源Java RPC框架，它提供了三大核心能力：面向接口的远程方法调用，智能容错和负载均衡，以及服务自动注册和发现。</p>
+                <a href="/2019/10/08/dubbo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #1AD6FD 0%, #1D62F0 100%)" target="_blank">
+                    <i class="icon far fa-eye fa-fw"></i>阅读更多
+                </a>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
 
 
                     </div>
@@ -481,9 +596,7 @@ $(function () {
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                一、基础知识1. 分布式基础理论1.1） 什么事分布式系统？ 《分布式系统原理与范型》定义：
-“分布式系统是若干独立计算机的集合，这些计算机对于用户来说就像单个相关系统”
-分布式系统（distributed system）是建立在网络之上的
+                                Apache Dubbo是一款高性能、轻量级的开源Java RPC框架，它提供了三大核心能力：面向接口的远程方法调用，智能容错和负载均衡，以及服务自动注册和发现。
                             
                         </div>
                         <div class="publish-info">
@@ -492,8 +605,12 @@ $(function () {
                             </span>
                             <span class="publish-author">
                                 
-                                <i class="fas fa-user fa-fw"></i>
-                                YU
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                                
                                 
                             </span>
                         </div>
@@ -526,11 +643,7 @@ $(function () {
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                shiro架构
-
-subject：主体，可以是用户也可以是程序，主体要访问系统，系统需要对主体进行认证、授权。
-securityManager：安全管理器，主体进行认证和授权都 是通过securityManager进行。
-authentic
+                                Apache Shiro是一个强大且易用的Java安全框架,执行身份验证、授权、密码和会话管理。使用Shiro的易于理解的API,您可以快速、轻松地获得任何应用程序,从最小的移动应用程序到最大的网络和企业应用程序。
                             
                         </div>
                         <div class="publish-info">
@@ -539,8 +652,12 @@ authentic
                             </span>
                             <span class="publish-author">
                                 
-                                <i class="fas fa-user fa-fw"></i>
-                                YU
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                                
                                 
                             </span>
                         </div>
@@ -573,8 +690,7 @@ authentic
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                jenkins介绍jenkins概念Jenkins是一个开源的、可扩展的持续集成、交付、部署（软件/代码的编译、打包、部署）的基于web界面的平台。允许持续集成和持续交付项目，无论用的是什么平台，可以处理任何类型的构建或持续集成。
-官网：h
+                                Jenkins是一个开源的、可扩展的持续集成、交付、部署（软件/代码的编译、打包、部署）的基于web界面的平台。允许持续集成和持续交付项目，无论用的是什么平台，可以处理任何类型的构建或持续集成。
                             
                         </div>
                         <div class="publish-info">
@@ -583,8 +699,12 @@ authentic
                             </span>
                             <span class="publish-author">
                                 
-                                <i class="fas fa-user fa-fw"></i>
-                                YU
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                                
                                 
                             </span>
                         </div>
@@ -690,6 +810,13 @@ authentic
     <a href="https://github.com" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
+
+
+
+    <a href="mailto:1826164270@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
 
 
 
